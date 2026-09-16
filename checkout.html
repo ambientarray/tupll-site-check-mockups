@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Confirm your site report | Tupll Site Check</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&family=Geist+Mono&display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site"><div class="wrap"><a href="index.html"><img src="tupll-logo.png" alt="Tupll"></a><a class="util" href="index.html">Back to Site Check</a></div></header>
+
+<main class="wrap narrow section stack" style="gap: 20px; padding-top: 32px; padding-bottom: 32px;">
+  <div class="stack" style="gap: 10px;">
+    <h1 class="h1">Confirm your site report.</h1>
+    <p>Review the address, delivery date, and terms before continuing to Stripe.</p>
+  </div>
+
+  <form class="stack" style="gap: 20px;" id="co" onsubmit="return goStripe(event)">
+    <div class="stack" style="gap: 10px;" role="radiogroup" aria-label="Report tier">
+      <label class="card" style="display: flex; gap: 12px; padding: 14px; cursor: pointer;" id="tier149-card"><input type="radio" name="tier" value="149" checked onchange="pickTier()" style="accent-color: var(--primary); width: 20px; height: 20px; margin: 3px 0 0;"><span><span style="font-weight: 600; display: block;">Site report. USD 149.</span><span class="help">The complete web report for one coffee-shop address.</span></span></label>
+      <label class="card" style="display: flex; gap: 12px; padding: 14px; cursor: pointer;" id="tier299-card"><input type="radio" name="tier" value="299" onchange="pickTier()" style="accent-color: var(--primary); width: 20px; height: 20px; margin: 3px 0 0;"><span><span style="font-weight: 600; display: block;">Site report, aerial, and call. USD 299.</span><span class="help">The same report, plus a USGS aerial image and a 15-minute call.</span></span></label>
+    </div>
+
+    <div class="card stack" style="gap: 16px; padding: 16px;">
+      <div>
+        <span class="fl">Report address</span>
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><p id="co-addr">2110 S Lamar Blvd, Austin, TX 78704</p><a href="index.html" style="font-size: 14px; white-space: nowrap;">Edit address</a></div>
+        <p class="help">This is the address Tupll will analyze.</p>
+      </div>
+      <div>
+        <label class="fl" for="co-email">Delivery email</label>
+        <input class="input" id="co-email" type="email" required placeholder="you@example.com">
+        <p class="help" style="margin-top: 6px;">Your order confirmation and report link will go here. No account is created.</p>
+      </div>
+      <div>
+        <label class="fl" for="co-when">Decision deadline</label>
+        <select class="select" id="co-when" required><option value="">Choose one</option><option>Within 30 days</option><option>One to three months</option><option>Three to six months</option><option>Just exploring</option></select>
+        <p class="help" style="margin-top: 6px;">Helps Tupll prioritise your report. Asked here only if you skipped the intake.</p>
+      </div>
+    </div>
+
+    <dl class="stack" style="gap: 0;">
+      <div class="dl" style="border-top: 1px solid var(--border);"><dt>Delivery by</dt><dd>Tuesday, October 6, 2026</dd></div>
+      <div class="dl"><dt>Prepared by</dt><dd>Jed Jones, Tupll</dd></div>
+      <div class="dl"><dt>Format</dt><dd>Web report</dd></div>
+      <div class="dl"><dt>Selected price</dt><dd id="co-price">USD 149</dd></div>
+    </dl>
+    <p class="help">Delivered within three business days, with a target of two. Your confirmation email will arrive within one minute.</p>
+
+    <div class="stack" style="gap: 10px;">
+      <h2 class="h3">Before you pay.</h2>
+      <p class="small">You are ordering a fixed-scope report for one address. It describes public-data conditions and does not predict business success.</p>
+      <div style="display: flex; gap: 16px;"><a href="terms.html" style="font-size: 14px;">Terms</a><a href="terms.html#refunds" style="font-size: 14px;">Refund policy</a></div>
+      <div class="note">Refund summary pending approval. Checkout is not open. (Prototype: the button below goes to the confirmation page.)</div>
+      <label class="check"><input type="checkbox" id="co-terms" required> I agree to the Terms and acknowledge the Refund policy.</label>
+    </div>
+
+    <div class="stack" style="gap: 8px;">
+      <button class="btn btn-primary block" type="submit" id="co-go">Continue to Stripe</button>
+      <p class="help">You will review the final total and pay securely on Stripe.</p>
+      <p class="help">No order is placed until payment succeeds.</p>
+      <p class="help hidden" id="co-error">Please check the highlighted details.</p>
+    </div>
+  </form>
+</main>
+
+<footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check for coffee shops.</p><div class="links"><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
+
+<script>
+function pickTier() {
+  var t = document.querySelector('input[name=tier]:checked').value;
+  document.getElementById('co-price').textContent = 'USD ' + t;
+  document.getElementById('tier149-card').style.border = t === '149' ? '2px solid var(--primary)' : '1px solid var(--border)';
+  document.getElementById('tier299-card').style.border = t === '299' ? '2px solid var(--primary)' : '1px solid var(--border)';
+}
+(function () {
+  var q = new URLSearchParams(location.search);
+  if (q.get('tier') === '299') document.querySelector('input[name=tier][value="299"]').checked = true;
+  pickTier();
+})();
+function goStripe(e) {
+  e.preventDefault();
+  var ok = document.getElementById('co-email').checkValidity() && document.getElementById('co-when').value && document.getElementById('co-terms').checked;
+  if (!ok) { document.getElementById('co-error').classList.remove('hidden'); document.getElementById('co').reportValidity(); return false; }
+  var b = document.getElementById('co-go'); b.textContent = 'Opening secure checkout…'; b.disabled = true;
+  var t = document.querySelector('input[name=tier]:checked').value;
+  setTimeout(function () { location.href = 'thanks.html?tier=' + t + '&email=' + encodeURIComponent(document.getElementById('co-email').value); }, 800);
+  return false;
+}
+</script>
+</body>
+</html>

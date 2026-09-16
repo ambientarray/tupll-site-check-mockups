@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Your report is in motion | Tupll Site Check</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&family=Geist+Mono&display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site"><div class="wrap"><a href="index.html"><img src="tupll-logo.png" alt="Tupll"></a><a class="util" href="index.html">Back to Site Check</a></div></header>
+
+<main class="wrap narrow section stack" style="gap: 24px; padding-top: 32px; padding-bottom: 32px;">
+  <div class="stack" style="gap: 12px;" id="confirming">
+    <p class="help">Confirming your payment&hellip;</p>
+  </div>
+  <div class="stack hidden" style="gap: 24px;" id="confirmed">
+    <div class="stack" style="gap: 12px;">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color: var(--primary);"><circle cx="12" cy="12" r="10"></circle><path d="M8 12.5 l 2.5 2.5 l 5.5 -6"></path></svg>
+      <h1 class="h1">Your report is in motion.</h1>
+      <p>Payment received. Tupll will prepare the report for the address below.</p>
+      <dl class="stack">
+        <div class="dl" style="border-top: 1px solid var(--border);"><dt>Order number</dt><dd class="mono">SC-2026-1042</dd></div>
+        <div class="dl"><dt>Report address</dt><dd>2110 S Lamar Blvd, Austin, TX 78704</dd></div>
+        <div class="dl"><dt>Selected report</dt><dd id="th-tier">Site report</dd></div>
+        <div class="dl"><dt>Delivery by</dt><dd>Tuesday, October 6, 2026</dd></div>
+      </dl>
+    </div>
+    <div class="card stack" style="gap: 8px; padding: 16px;">
+      <h2 class="h3">Jed Jones is preparing your report.</h2>
+      <p class="small">A confirmation email is on its way to <span id="th-email">you@example.com</span>. It should arrive within one minute and includes your delivery date.</p>
+      <p class="small">Questions or an address correction? Email <a href="mailto:site-check@tupll.com">site-check@tupll.com</a>.</p>
+      <p class="help">Include your order number. If the confirmation does not arrive, check spam and then contact us.</p>
+    </div>
+    <div class="stack" style="gap: 10px;">
+      <h2 class="h3">What happens next.</h2>
+      <ol class="small" style="padding-left: 20px; display: grid; gap: 6px;">
+        <li>Tupll prepares the address-specific analysis.</li>
+        <li>Jed reviews the report before delivery.</li>
+        <li>You receive a private report link by Tuesday, October 6.</li>
+        <li class="hidden" id="th-299">Your delivery email also includes the aerial view and a link to arrange your 15-minute call.</li>
+      </ol>
+    </div>
+    <div class="stack" style="gap: 10px;">
+      <h2 class="h3">See what is coming.</h2>
+      <a class="btn btn-outline" href="sample.html">Read the complete sample</a>
+      <p class="help">The sample shows the format. Your report will use your address.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check for coffee shops.</p><div class="links"><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
+
+<script>
+(function () {
+  var q = new URLSearchParams(location.search);
+  if (q.get('tier') === '299') { document.getElementById('th-tier').textContent = 'Site report, aerial, and call'; document.getElementById('th-299').classList.remove('hidden'); }
+  if (q.get('email')) document.getElementById('th-email').textContent = q.get('email');
+  setTimeout(function () { document.getElementById('confirming').classList.add('hidden'); document.getElementById('confirmed').classList.remove('hidden'); }, 900);
+})();
+</script>
+</body>
+</html>
