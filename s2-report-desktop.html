@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>S2 and S4 Report, desktop | Tupll Site Check mockup</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&family=Geist+Mono&display=swap">
+  <style>
+    body { margin: 0; background: #f7f3e8; color: oklch(0.15 0 0); font-family: Geist, "Geist Fallback", system-ui, -apple-system, sans-serif; font-size: 16px; line-height: 25px; -webkit-font-smoothing: antialiased; }
+    a { color: oklch(0.28 0.02 240); text-decoration: underline; text-underline-offset: 3px; } a:hover { color: oklch(0.35 0.08 165); }
+    h1, h2, h3, p { margin: 0; }
+    .lbl { font-size: 12px; font-weight: 600; line-height: 16px; color: oklch(0.5 0.01 240); }
+    .h1 { font-size: 40px; font-weight: 600; line-height: 46px; letter-spacing: -0.015em; }
+    .h2 { font-size: 26px; font-weight: 600; line-height: 32px; }
+    .verdict { font-size: 18px; line-height: 27px; text-wrap: pretty; }
+    .hl { color: oklch(0.35 0.08 165); font-weight: 600; }
+    .help { font-size: 13px; line-height: 19px; color: oklch(0.5 0.01 240); }
+    .card { background: #ffffff; border: 1px solid oklch(0.9 0.005 240); border-radius: 8px; }
+    .num { font-size: 30px; font-weight: 600; line-height: 34px; font-variant-numeric: tabular-nums; }
+    .mono { font-family: "Geist Mono", ui-monospace, monospace; font-size: 12px; line-height: 16px; }
+    .tr { display: flex; justify-content: space-between; gap: 12px; padding: 8px 0; border-bottom: 1px solid oklch(0.9 0.005 240); font-size: 15px; line-height: 22px; }
+    .tn { font-variant-numeric: tabular-nums; text-align: right; white-space: nowrap; }
+    .th { display: grid; gap: 12px; padding: 6px 0; border-bottom: 1px solid oklch(0.9 0.005 240); font-size: 13px; font-weight: 600; color: oklch(0.5 0.01 240); }
+    .td { display: grid; gap: 12px; padding: 8px 0; border-bottom: 1px solid oklch(0.9 0.005 240); font-size: 15px; line-height: 22px; }
+    .sec { display: flex; flex-direction: column; gap: 14px; padding-top: 48px; }
+    .src { font-size: 13px; line-height: 19px; color: oklch(0.5 0.01 240); }
+    .toc a { font-size: 14px; line-height: 20px; text-decoration: none; }
+    .btn { display: flex; align-items: center; justify-content: center; height: 44px; border-radius: 6px; font-weight: 600; font-size: 16px; padding: 0 20px; }
+    .btn-primary { background: oklch(0.35 0.08 165); color: oklch(0.99 0 0); }
+  </style>
+
+<style>body { display: flex; justify-content: center; background: #e9e5da; padding: 24px 0; } .frame { box-shadow: 0 2px 16px rgba(0,0,0,0.12); }</style>
+</head><body><div class="frame">
+<div style="width: 1200px; min-height: 3460px; background: #f7f3e8; display: flex; flex-direction: column;">
+
+  <div style="height: 72px; border-bottom: 1px solid oklch(0.9 0.005 240);">
+    <div style="width: 1040px; margin: 0 auto; height: 72px; display: flex; align-items: center; justify-content: space-between;">
+      <img src="data:image/png;base64,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7XZ6+umn5dN+1113KTZb4xclbirwLKlLtTUVt/7jbfHBguV+/e+Y9fBvMy6k+2deVK9CwbhqyvK3VOzN8P5sXs5OhjkFHo6HH364RamKjFqhlg0Lecu9P3kEKMMwTATAYs4wDBMBsJgzDMNEACzmDMMwEQCLOcMwTATAYs4wDBMBsJgzDMNEACzmDMMwEQCLOcMwTATAI0AZpgVTPSmW2+8MjvitPnOwMy0fFnOGacGYDAa54LTF7Gc+e7OJDH5m1GQiC55oi2FaMDl5RaLYXhZwRsGUBBulJvJiEpEOiznDMEwEwO9fDMMwEQCLOcMwTATAYs4wDBMBsJiHgQULFoi3335bVFRUBNyvpKSE3nzzTbF06VLdY8ucTie988474ttvv424uLWFCxeKWbNmifLyxq2fuXr1avH666+LvLy8OusmJydH7rt+/fomrcfly5eLN954QxQVFTXL64e6Q/lWrVrVLMsXkcilrsL0+eabb8T1118vBg4cKDp06CB69eolJk2aJF599VVRVlameYzL5QppmUKdPj44X1Q9hMBzOwTW8+9du3bJ/S699FKhx3lhAWP171NCJU477bSg067vByKJc/nd734niouLNfcpLCwUV155pfjPf/7T6HLhnHBux44da1Qat956qzwe5a1r38WLF8t977777iarR3ymTZsm8922bVuT5lvfz5o1a2T5Zs6c2SzLJyLwExbLHBnfdNNN4oILLqB58+ZRr1696IorrqDx48fT/v376eabb6azzz5b5Ofn12rVH3jgAXHDDTeErKWHtTxx4sSQWxIvv/wyGjJKSkqqWXbq888/FzhnCLqKGm5msViCym/ZsmVi+PDhtSxNLHFmNBopJkZ77chQgGv72Wef0axZs+ihhx7SrGe8rcyePZu+//77Rufz/PPP01dffVWrfhuCWt/R9VjE2GCoHqphNpupKVHL6C8kMdyoddfU9dKaCcugoe+++w6vpnThhRfSJ598oniL1V133SX+/e9/09133w03Q812PKApKSkhK9fChQtp69atFGqGDx/uIzKLFy+mDRs2kMlk0j2/5cuX09q1a7FuYa18tVdMDx2q8GVmZtJ//vMfNODi9NNP9ykThCA2NrbR+Xin2VQGSlPS1NeuoaiNTHMvZyQRlmZ99erV8nvmzJmaVicWSn3qqafoyiuvlH/v3r1b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" alt="Tupll" style="height: 40px; width: auto;">
+      <a href="#back" style="font-size: 15px; font-weight: 600;">Back to Site Check</a>
+    </div>
+  </div>
+
+  <div style="width: 1040px; margin: 0 auto; display: grid; grid-template-columns: 200px 760px; gap: 80px; padding-top: 24px;">
+    <!-- Left rail: table of contents -->
+    <div class="toc" style="display: flex; flex-direction: column; gap: 10px; padding-top: 140px; position: sticky; top: 24px; align-self: start;">
+      <p class="lbl">In this report</p>
+      <a href="#trade">The area this report describes</a>
+      <a href="#index">Site index</a>
+      <a href="#lives">Who lives here</a>
+      <a href="#works">Who works here by day</a>
+      <a href="#change">How the area is changing</a>
+      <a href="#market">The coffee market nearby</a>
+      <a href="#neigh">Five best-customer neighborhoods</a>
+      <a href="#honesty">What this report cannot tell you</a>
+    </div>
+
+    <!-- Reading column -->
+    <div style="display: flex; flex-direction: column;">
+      <div style="border: 2px solid oklch(0.28 0.02 240); border-radius: 8px; padding: 10px 16px; font-size: 14px; line-height: 20px; font-weight: 600;">Sample report. This report is for an Austin address, not your site.</div>
+      <p class="help" style="padding-top: 8px;">Illustrative mockup. Figures and map geometry are placeholders, not findings about this address.</p>
+
+      <div style="display: flex; flex-direction: column; gap: 8px; padding-top: 28px;">
+        <p class="lbl">Tupll Site Check</p>
+        <h1 class="h1">2110 S Lamar Blvd</h1>
+        <p style="font-size: 20px; line-height: 28px;">Austin, TX 78704</p>
+        <p>Coffee shop</p>
+        <p class="help">Primary trade area: 12-minute drive. Sensitivity view: 1, 2, and 3 miles.</p>
+        <div style="display: flex; gap: 24px; padding-top: 6px;" class="help"><p>Prepared October 1, 2026.</p><p>Prepared by Jed Jones, Tupll.</p><p>Reviewed by Jed Jones.</p><p class="mono">Report version 1.0</p></div>
+        <p class="help">Data vintages: ACS 2020 to 2024, LODES 2022, HMDA 2024, Building Permits Survey 2025, Population Estimates 2025, Overture August 2026.</p>
+      </div>
+
+      <!-- Trade area -->
+      <div class="sec" id="trade">
+        <h2 class="h2">The area this report describes.</h2>
+        <p class="verdict">A 12-minute drive area is the starting point; 1, 2, and 3 mile rings show how the picture changes.</p>
+        <p class="lbl">Trade area and rings</p>
+        <div style="border: 1px solid oklch(0.9 0.005 240); border-radius: 8px; overflow: hidden; height: 340px; background: #f7f3e8;">
+          <svg viewBox="0 0 760 340" width="760" height="340" role="img" aria-label="Map of the candidate address with a 12-minute drive area and 1, 2, and 3 mile rings">
+            <rect width="760" height="340" fill="#f7f3e8"></rect>
+            <path d="M0 60 C 120 90, 200 30, 330 45 S 560 100, 760 70 L 760 0 L 0 0 Z" fill="#ffffff"></path>
+            <g stroke="#e4e2e6" stroke-width="1"><line x1="0" y1="120" x2="760" y2="128"></line><line x1="0" y1="210" x2="760" y2="200"></line><line x1="0" y1="290" x2="760" y2="296"></line><line x1="120" y1="0" x2="130" y2="340"></line><line x1="260" y1="0" x2="255" y2="340"></line><line x1="480" y1="0" x2="490" y2="340"></line><line x1="620" y1="0" x2="612" y2="340"></line></g>
+            <g stroke="#8a8d94" stroke-width="2"><path d="M0 172 L 760 160"></path><path d="M380 0 L 372 340"></path></g>
+            <path d="M260 80 L 520 70 L 600 170 L 540 290 L 330 300 L 220 210 Z" fill="oklch(0.35 0.08 165 / 0.12)" stroke="oklch(0.35 0.08 165)" stroke-width="2"></path>
+            <circle cx="380" cy="170" r="40" fill="none" stroke="oklch(0.28 0.02 240)" stroke-width="1.5"></circle>
+            <circle cx="380" cy="170" r="80" fill="none" stroke="oklch(0.28 0.02 240)" stroke-width="1.5" stroke-dasharray="6 5"></circle>
+            <circle cx="380" cy="170" r="120" fill="none" stroke="oklch(0.28 0.02 240)" stroke-width="1.5" stroke-dasharray="2 5"></circle>
+            <path d="M380 152 c -8 0 -12 5 -12 12 c 0 9 12 21 12 21 s 12 -12 12 -21 c 0 -7 -4 -12 -12 -12 z" fill="oklch(0.28 0.02 240)"></path>
+            <circle cx="380" cy="164" r="4" fill="#f7f3e8"></circle>
+          </svg>
+        </div>
+        <div style="display: flex; gap: 16px;" class="help"><span>Candidate address</span><span>12-minute drive area</span><span>1 mile</span><span>2 miles</span><span>3 miles</span></div>
+        <p class="help">This fixture uses a drive area because the address falls below the walk-up density threshold. For a dense, walkable site, the primary area becomes a 10-minute walk.</p>
+        <p class="src">Source: Valhalla routing over OpenStreetMap. Distance rings calculated by Tupll.</p>
+      </div>
+
+      <!-- Site index -->
+      <div class="sec" id="index">
+        <h2 class="h2">Site index: area conditions.</h2>
+        <div style="display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 20px; align-items: center;">
+          <div class="card" style="display: flex; flex-direction: column; gap: 4px; padding: 20px;">
+            <p style="font-size: 48px; line-height: 52px; font-weight: 600; color: oklch(0.28 0.02 240); font-variant-numeric: tabular-nums;">71 <span style="font-size: 18px; color: oklch(0.5 0.01 240);">/ 100</span></p>
+            <p class="help">An index of area conditions from public data. It is not a prediction of your success.</p>
+          </div>
+          <p class="verdict">Demand fit scores higher than competitive room in this example.</p>
+        </div>
+        <div style="display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px;">
+          <div class="card" style="display: flex; flex-direction: column; gap: 4px; padding: 14px;"><p class="lbl">Demand fit</p><p class="num">78 <span style="font-size: 14px; color: oklch(0.5 0.01 240);">/ 100</span></p><p class="help">Weight: 35%</p><p style="font-size: 13px; line-height: 19px;">The share of residents aged 25 to 39 is above the Austin metro.</p></div>
+          <div class="card" style="display: flex; flex-direction: column; gap: 4px; padding: 14px;"><p class="lbl">Competitive room</p><p class="num">58 <span style="font-size: 14px; color: oklch(0.5 0.01 240);">/ 100</span></p><p class="help">Weight: 25%</p><p style="font-size: 13px; line-height: 19px;">14 coffee shops are listed within 2 miles.</p></div>
+          <div class="card" style="display: flex; flex-direction: column; gap: 4px; padding: 14px;"><p class="lbl">Access</p><p class="num">74 <span style="font-size: 14px; color: oklch(0.5 0.01 240);">/ 100</span></p><p class="help">Weight: 20%</p><p style="font-size: 13px; line-height: 19px;">8,900 jobs are counted within half a mile; check entry and parking on site.</p></div>
+          <div class="card" style="display: flex; flex-direction: column; gap: 4px; padding: 14px;"><p class="lbl">Momentum</p><p class="num">72 <span style="font-size: 14px; color: oklch(0.5 0.01 240);">/ 100</span></p><p class="help">Weight: 20%</p><p style="font-size: 13px; line-height: 19px;">Home-purchase activity is above the metro comparison.</p></div>
+        </div>
+        <p class="help">Weights are fixed for every coffee-shop report in version 1.0. <a href="#how">How the index is calculated</a></p>
+      </div>
+
+      <!-- Who lives here -->
+      <div class="sec" id="lives">
+        <h2 class="h2">Who lives here.</h2>
+        <p class="verdict">Residents aged 25 to 39 make up <span class="hl">33.8%</span> of the trade area, compared with <span class="hl">27.4%</span> across the Austin metro.</p>
+        <div style="display: grid; grid-template-columns: 200px 200px; gap: 12px;">
+          <div class="card" style="display: flex; flex-direction: column; gap: 4px; padding: 14px;"><p class="lbl">Residents</p><p class="num">96,200</p><p class="help">12-minute drive area</p><p class="help">Metro comparison unavailable</p></div>
+          <div class="card" style="display: flex; flex-direction: column; gap: 4px; padding: 14px;"><p class="lbl">Households</p><p class="num">46,500</p><p class="help">12-minute drive area</p><p class="help">Metro comparison unavailable</p></div>
+        </div>
+        <div style="display: flex; flex-direction: column;">
+          <p class="lbl" style="padding-bottom: 6px;">Trade area and Austin metro</p>
+          <div class="th" style="grid-template-columns: 1fr 140px 140px 160px;"><span>Measure</span><span style="text-align: right;">Trade area</span><span style="text-align: right;">Austin metro</span><span style="text-align: right;">Difference</span></div>
+          <div class="td" style="grid-template-columns: 1fr 140px 140px 160px;"><span>Aged 25 to 39</span><span class="tn">33.8%</span><span class="tn">27.4%</span><span class="tn">6.4 percentage points</span></div>
+          <div class="td" style="grid-template-columns: 1fr 140px 140px 160px;"><span>Renters</span><span class="tn">60.7%</span><span class="tn">45.1%</span><span class="tn">15.6 percentage points</span></div>
+          <div class="td" style="grid-template-columns: 1fr 140px 140px 160px;"><span>Bachelor's degree or higher</span><span class="tn">52.4%</span><span class="tn">46.8%</span><span class="tn">5.6 percentage points</span></div>
+          <div class="td" style="grid-template-columns: 1fr 140px 140px 160px;"><span>Median household income</span><span class="tn">USD 89,400</span><span class="tn">USD 92,700</span><span class="tn">USD 3,300 lower</span></div>
+        </div>
+        <p class="help"><a href="#rings">Compare 1, 2, and 3 mile rings</a></p>
+        <p class="src">Source: Census ACS 2020 to 2024 five-year estimates, using Census block-group boundaries.</p>
+      </div>
+
+      <!-- Who works here -->
+      <div class="sec" id="works">
+        <h2 class="h2">Who works here by day.</h2>
+        <p class="verdict">The data counts <span class="hl">8,900 jobs</span> within half a mile of the address.</p>
+        <div style="display: grid; grid-template-columns: 200px 200px; gap: 12px;">
+          <div class="card" style="display: flex; flex-direction: column; gap: 4px; padding: 14px;"><p class="lbl">Jobs within half a mile</p><p class="num">8,900</p><p class="help">Half-mile radius</p></div>
+          <div class="card" style="display: flex; flex-direction: column; gap: 4px; padding: 14px;"><p class="lbl">Jobs in the trade area</p><p class="num">110,500</p><p class="help">12-minute drive area</p></div>
+        </div>
+        <p>Office and professional work accounts for 45.1% of jobs in the trade area. Job counts are not a count of people present at a particular hour.</p>
+        <div style="display: flex; flex-direction: column;">
+          <div class="th" style="grid-template-columns: 1fr 120px 120px 120px;"><span>Jobs by ring</span><span style="text-align: right;">1 mile</span><span style="text-align: right;">2 miles</span><span style="text-align: right;">3 miles</span></div>
+          <div class="td" style="grid-template-columns: 1fr 120px 120px 120px;"><span>Total jobs</span><span class="tn">21,400</span><span class="tn">68,800</span><span class="tn">142,000</span></div>
+        </div>
+        <p class="src">Source: Census LEHD LODES workplace data, 2022.</p>
+      </div>
+
+      <!-- Change -->
+      <div class="sec" id="change">
+        <h2 class="h2">How the area is changing.</h2>
+        <p class="verdict">Home-purchase activity is above the metro comparison, while population growth is slower.</p>
+        <div style="display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px;">
+          <div class="card" style="display: flex; flex-direction: column; gap: 4px; padding: 14px;"><p class="lbl">Home-purchase activity</p><p style="font-size: 15px; line-height: 22px;">19.2 purchase originations per 100 owner households, compared with 14.8 across the metro.</p><p class="help">HMDA 2024. This is a proxy for movement, not a count of all movers.</p></div>
+          <div class="card" style="display: flex; flex-direction: column; gap: 4px; padding: 14px;"><p class="lbl">Residential permits</p><p style="font-size: 15px; line-height: 22px;">412 permitted housing units.</p><p class="help">Building Permits Survey 2025. City-level measure, not permits inside the trade area.</p></div>
+          <div class="card" style="display: flex; flex-direction: column; gap: 4px; padding: 14px;"><p class="lbl">Population change</p><p style="font-size: 15px; line-height: 22px;">6.1% from 2020 to 2025, compared with 8.9% across the metro.</p><p class="help">Population Estimates 2025. City-level measure.</p></div>
+        </div>
+      </div>
+
+      <!-- Market -->
+      <div class="sec" id="market">
+        <h2 class="h2">The coffee market nearby.</h2>
+        <p class="verdict"><span class="hl">14 coffee shops</span> are listed within 2 miles; the nearest listed shop is <span class="hl">0.3 miles</span> away.</p>
+        <div style="display: grid; grid-template-columns: 160px 160px 160px; gap: 12px;">
+          <div class="card" style="display: flex; flex-direction: column; gap: 2px; padding: 12px;"><p class="lbl">1 mile</p><p class="num">6</p></div>
+          <div class="card" style="display: flex; flex-direction: column; gap: 2px; padding: 12px;"><p class="lbl">2 miles</p><p class="num">14</p></div>
+          <div class="card" style="display: flex; flex-direction: column; gap: 2px; padding: 12px;"><p class="lbl">3 miles</p><p class="num">27</p></div>
+        </div>
+        <p>Chain share within 2 miles: 36%.</p>
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 20px; align-items: start;">
+          <div style="display: flex; flex-direction: column;">
+            <p class="lbl" style="padding-bottom: 6px;">Coffee shops listed nearby</p>
+            <div class="th" style="grid-template-columns: 1fr 120px 60px 120px;"><span>Coffee shop</span><span style="text-align: right;">Distance from address</span><span style="text-align: right;">Chain</span><span style="text-align: right;">Texas first-sale year</span></div>
+            <div class="td" style="grid-template-columns: 1fr 120px 60px 120px;"><span>1. Placeholder Coffee A</span><span class="tn">0.3 miles</span><span class="tn">No</span><span class="tn">2019</span></div>
+            <div class="td" style="grid-template-columns: 1fr 120px 60px 120px;"><span>2. Placeholder Chain B</span><span class="tn">0.6 miles</span><span class="tn">Yes</span><span class="tn">2015</span></div>
+            <div class="td" style="grid-template-columns: 1fr 120px 60px 120px;"><span>3. Placeholder Coffee C</span><span class="tn">0.9 miles</span><span class="tn">No</span><span class="tn">2022</span></div>
+            <div class="td" style="grid-template-columns: 1fr 120px 60px 120px;"><span>4. Placeholder Coffee D</span><span class="tn">1.4 miles</span><span class="tn">No</span><span class="tn">Not recorded</span></div>
+            <p class="help" style="padding-top: 8px;">This mockup contains four illustrative rows. The delivered report lists the matching businesses used in its counts.</p>
+            <p class="help">First-sale year is a Texas tax-record date, not necessarily the shop's opening year. Listings may be incomplete or out of date.</p>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <p class="lbl">Shops within 3 miles</p>
+            <div style="border: 1px solid oklch(0.9 0.005 240); border-radius: 8px; overflow: hidden; height: 240px; background: #f7f3e8;">
+              <svg viewBox="0 0 300 240" width="300" height="240" role="img" aria-label="Map of nearby coffee shops numbered 1 to 4">
+                <rect width="300" height="240" fill="#f7f3e8"></rect>
+                <g stroke="#e4e2e6" stroke-width="1"><line x1="0" y1="90" x2="300" y2="95"></line><line x1="0" y1="150" x2="300" y2="140"></line><line x1="70" y1="0" x2="76" y2="240"></line><line x1="220" y1="0" x2="214" y2="240"></line></g>
+                <g stroke="#8a8d94" stroke-width="2"><path d="M0 120 L 300 112"></path><path d="M150 0 L 144 240"></path></g>
+                <circle cx="150" cy="120" r="84" fill="none" stroke="oklch(0.28 0.02 240)" stroke-width="1.5" stroke-dasharray="2 5"></circle>
+                <path d="M150 104 c -7 0 -11 5 -11 11 c 0 8 11 19 11 19 s 11 -11 11 -19 c 0 -6 -4 -11 -11 -11 z" fill="oklch(0.28 0.02 240)"></path>
+                <g font-family="Geist, system-ui, sans-serif" font-size="11" font-weight="600" fill="oklch(0.28 0.02 240)">
+                  <circle cx="173" cy="108" r="9" fill="#ffffff" stroke="oklch(0.28 0.02 240)" stroke-width="1.5"></circle><text x="173" y="112" text-anchor="middle">1</text>
+                  <circle cx="125" cy="150" r="9" fill="#ffffff" stroke="oklch(0.28 0.02 240)" stroke-width="1.5"></circle><text x="125" y="154" text-anchor="middle">2</text>
+                  <circle cx="197" cy="78" r="9" fill="#ffffff" stroke="oklch(0.28 0.02 240)" stroke-width="1.5"></circle><text x="197" y="82" text-anchor="middle">3</text>
+                  <circle cx="93" cy="182" r="9" fill="#ffffff" stroke="oklch(0.28 0.02 240)" stroke-width="1.5"></circle><text x="93" y="186" text-anchor="middle">4</text>
+                </g>
+              </svg>
+            </div>
+            <p class="help">Numbers match the table. Illustrative positions.</p>
+          </div>
+        </div>
+        <h3 style="font-size: 18px; font-weight: 600; line-height: 27px;">What to check on your visit.</h3>
+        <div style="display: flex; flex-direction: column; gap: 6px; font-size: 15px; line-height: 23px;">
+          <p>Visit the two nearest independents at 8 am on a weekday and count the line.</p>
+          <p>Check whether the nearest chain has a drive-through.</p>
+          <p>Note which shops have seating for laptops and how full it is at 10 am.</p>
+          <p>Ask the landlord for the last two tenants at this address and why they left.</p>
+          <p>Walk the entry from the arterial: is the turn-in signalized and is parking visible from the road.</p>
+        </div>
+        <p class="src">Source: Overture Places, August 2026 release. Texas sales-tax locations for first-sale dates.</p>
+      </div>
+
+      <!-- Neighborhoods -->
+      <div class="sec" id="neigh">
+        <h2 class="h2">Five best-customer neighborhoods.</h2>
+        <p class="verdict">These are places to investigate for outreach, not a forecast of who will buy.</p>
+        <p class="help">Ranked with a rule-based coffee-shop profile using renter share, age, education, daytime jobs, and retail density.</p>
+        <div style="display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 20px; align-items: start;">
+          <div style="display: flex; flex-direction: column;">
+            <div class="th" style="grid-template-columns: 1.4fr 80px 100px 1fr;"><span>Neighborhood</span><span style="text-align: right;">Households</span><span style="text-align: right;">Distance from site</span><span style="text-align: right;">Channel to consider</span></div>
+            <div class="td" style="grid-template-columns: 1.4fr 80px 100px 1fr;"><span>1. Zilker</span><span class="tn">2,140</span><span class="tn">1.1 miles</span><span style="text-align: right; font-variant-numeric: tabular-nums;">Local Instagram and Facebook ads</span></div>
+            <div class="td" style="grid-template-columns: 1.4fr 80px 100px 1fr;"><span>2. Bouldin Creek</span><span class="tn">1,890</span><span class="tn">1.4 miles</span><span style="text-align: right; font-variant-numeric: tabular-nums;">Google location-targeted ads</span></div>
+            <div class="td" style="grid-template-columns: 1.4fr 80px 100px 1fr;"><span>3. South Lamar</span><span class="tn">2,460</span><span class="tn">0.4 miles</span><span style="text-align: right; font-variant-numeric: tabular-nums;">Location-based ads</span></div>
+            <div class="td" style="grid-template-columns: 1.4fr 80px 100px 1fr;"><span>4. Barton Hills</span><span class="tn">1,720</span><span class="tn">1.8 miles</span><span style="text-align: right; font-variant-numeric: tabular-nums;">New-mover mail</span></div>
+            <div class="td" style="grid-template-columns: 1.4fr 80px 100px 1fr;"><span>5. St. Edward's</span><span class="tn">2,010</span><span style="text-align: right;">Not supplied in fixture</span><span style="text-align: right;">Not supplied in fixture</span></div>
+          </div>
+          <div style="display: flex; flex-direction: column; gap: 6px;">
+            <p class="lbl">Neighborhoods, numbered</p>
+            <div style="border: 1px solid oklch(0.9 0.005 240); border-radius: 8px; overflow: hidden; height: 200px; background: #f7f3e8;">
+              <svg viewBox="0 0 300 200" width="300" height="200" role="img" aria-label="Illustrative map with five numbered neighborhood outlines">
+                <rect width="300" height="200" fill="#f7f3e8"></rect>
+                <g stroke="#e4e2e6" stroke-width="1"><line x1="0" y1="70" x2="300" y2="75"></line><line x1="0" y1="140" x2="300" y2="132"></line><line x1="100" y1="0" x2="95" y2="200"></line><line x1="210" y1="0" x2="215" y2="200"></line></g>
+                <g fill="none" stroke="oklch(0.28 0.02 240)" stroke-width="1.5"><path d="M30 40 L 95 30 L 105 90 L 40 100 Z"></path><path d="M110 100 L 175 95 L 180 150 L 115 160 Z"></path><path d="M130 40 L 190 35 L 195 85 L 135 90 Z"></path><path d="M200 120 L 265 110 L 275 170 L 210 180 Z"></path><path d="M215 30 L 280 25 L 285 80 L 220 88 Z"></path></g>
+                <g font-family="Geist, system-ui, sans-serif" font-size="11" font-weight="600" fill="oklch(0.28 0.02 240)"><text x="66" y="70">1</text><text x="145" y="130">3</text><text x="160" y="66">2</text><text x="236" y="150">4</text><text x="248" y="58">5</text></g>
+                <path d="M150 88 c -7 0 -11 5 -11 11 c 0 8 11 19 11 19 s 11 -11 11 -19 c 0 -6 -4 -11 -11 -11 z" fill="oklch(0.28 0.02 240)"></path>
+              </svg>
+            </div>
+            <p class="help">Illustrative outlines until real boundaries are supplied.</p>
+          </div>
+        </div>
+        <p class="src">Source: Census ACS five-year estimates and Overture Places. Rule-based ranking, not a learned customer profile.</p>
+      </div>
+
+      <!-- Honesty -->
+      <div class="sec" id="honesty">
+        <h2 class="h2">What this report cannot tell you.</h2>
+        <div style="display: flex; flex-direction: column; gap: 8px; font-size: 15px; line-height: 23px;">
+          <p>1. The site index describes public-data conditions. It is not a forecast of sales or success.</p>
+          <p>2. The customer-neighborhood profile is rule-based, not learned from your customers.</p>
+          <p>3. First-sale dates come from Texas records and are provided only for Texas locations where available.</p>
+          <p>4. Sources describe different periods. Each section states its data vintage.</p>
+          <p>5. A site visit must check visibility, entry, parking, pedestrian activity, competitor use, and the premises themselves.</p>
+        </div>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 16px; padding: 48px 0 40px 0;">
+        <p class="help">Sources include <a href="#osm">OpenStreetMap contributors</a>, <a href="#overture">Overture Maps Foundation</a>, and the <a href="#census">U.S. Census Bureau</a>. <a href="#hmda">HMDA</a> and <a href="#tx">Texas Comptroller records</a> where used.</p>
+        <div style="display: flex;"><div class="btn btn-primary">Order a report for your address</div></div>
+        <div style="height: 1px; background: oklch(0.9 0.005 240);"></div>
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <p class="help">Tupll Site Check for coffee shops. Sample.</p>
+          <div style="display: flex; gap: 20px;"><a class="help" href="#terms">Terms</a><a class="help" href="#refunds">Refund policy</a><a class="help" href="#privacy">Privacy</a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div></body></html>
