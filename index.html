@@ -6,136 +6,138 @@
 <meta name="robots" content="noindex">
 <title>Tupll Site Check for coffee shops</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&family=Geist+Mono&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
 <header class="site"><div class="wrap"><a href="index.html"><img src="tupll-logo.png" alt="Tupll"></a><a class="util" href="sample.html">Read the sample</a></div></header>
 
 <main>
-  <div class="wrap section cols-2" style="padding-top: 32px;">
-    <div class="stack" style="gap: 16px;">
+  <div class="wrap section hero stack" style="padding-top: 32px; gap: 28px;">
+    <div class="stack" style="gap: 14px;">
       <p class="lbl">For independent coffee-shop owners in Texas</p>
       <h1 class="h1">An independent second opinion before you sign the lease.</h1>
-      <p class="lead">A public-data report for one coffee-shop address, prepared by Tupll and reviewed by Dr. Jed Jones, marketing expert and data scientist.</p>
-      <form class="card stack" style="gap: 12px; padding: 16px;" id="address-form" onsubmit="return openIntake(event)">
+      <p class="lead">A public-data report on one address, prepared and reviewed by Tupll. $149, delivered within three business days.</p>
+      <form class="card stack" style="gap: 12px; padding: 16px;" id="address-form" onsubmit="return confirmAddress(event)">
         <div><label class="fl" for="addr">Candidate address</label><input class="input" id="addr" name="address" placeholder="Street address, city, Texas ZIP" autocomplete="street-address"></div>
-        <div style="display: flex; align-items: center; gap: 10px;"><span class="chip">Coffee shop</span><span class="help">More categories soon</span></div>
-        <button class="btn btn-primary block" type="submit">Continue with this address</button>
-        <p class="help">Texas addresses only. No sign-in.</p>
-        <p class="help hidden" id="addr-error">Site Check is currently available for Texas coffee-shop addresses. Enter a Texas address, or <a href="sample.html">read the Austin sample</a>.</p>
+        <button class="btn btn-primary block" type="submit">Continue to report options</button>
+        <p class="help">Texas addresses only. No sign-in. The report describes public-data conditions; it is not a forecast of sales.</p>
+        <p class="help hidden" id="addr-error" role="alert">Site Check is currently available for Texas coffee-shop addresses. Enter a Texas address, or <a href="sample.html">read the Austin sample</a>.</p>
       </form>
     </div>
-    <div class="stack" style="gap: 12px;">
-      <h2 class="h3">A complete report, not a sales call.</h2>
-      <p>$149. Delivered as a web page within three business days, with a target of two. Reviewed by Jed Jones.</p>
-      <a href="sample.html" style="font-size: 18px; font-weight: 600;">Read the complete Austin sample</a>
-      <p class="help">Free, unblurred, and readable without an account.</p>
-      <p class="help">The site index describes public-data conditions. It does not predict whether your coffee shop will succeed.</p>
-    </div>
+    <a class="card preview" href="sample.html" style="text-decoration: none; color: inherit; display: block;" aria-label="Read the complete sample report for 2110 S Lamar Blvd, Austin">
+      <div class="mapbox short" id="map-hero" role="img" aria-label="Map of coffee shops within 2 miles of the sample address"></div>
+      <div class="body">
+        <p class="lbl">Sample report · 2110 S Lamar Blvd, Austin</p>
+        <ul class="facts">
+          <li class="c2"><strong>16 coffee shops</strong> listed within 1 mile; the nearest is 0.2 miles away</li>
+          <li><strong>62% of households rent</strong>, against 42% across the three-county area</li>
+          <li class="c3"><strong>4,000 jobs</strong> within half a mile</li>
+        </ul>
+        <span style="font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">Read the complete sample</span>
+      </div>
+    </a>
   </div>
+
+  <div class="wrap" style="padding-top: 28px;"><p class="small" style="max-width: 760px;">Tupll is a site-selection analytics firm that works with multi-location operators. Site Check applies the same public-data method to a single address. <a href="https://tupll.com">About Tupll</a></p></div>
 
   <div class="wrap section stack" style="gap: 20px;">
     <h2 class="h2">From an address to a clearer decision.</h2>
     <div class="steps">
-      <div class="step"><div class="n">1</div><div><p style="font-weight: 600;">Enter your address.</p><p class="help">Tell us which Texas location you are considering.</p></div></div>
-      <div class="step"><div class="n">2</div><div><p style="font-weight: 600;">Read the sample.</p><p class="help">See the complete report before deciding whether to buy.</p></div></div>
-      <div class="step"><div class="n">3</div><div><p style="font-weight: 600;">Order when you are ready.</p><p class="help">Confirm your address, delivery date, and price before payment.</p></div></div>
+      <div class="step"><div class="n">1</div><div><p style="font-weight: 600;">Enter your address.</p><p class="help">The Texas location you are considering.</p></div></div>
+      <div class="step"><div class="n">2</div><div><p style="font-weight: 600;">Choose a report.</p><p class="help">You see the address, delivery date, and price before you pay.</p></div></div>
+      <div class="step"><div class="n">3</div><div><p style="font-weight: 600;">Receive it as a web page.</p><p class="help">Tupll prepares it for your address within three business days.</p></div></div>
     </div>
   </div>
 
-  <div class="wrap section stack" style="gap: 20px;" id="pricing">
-    <h2 class="h2">Choose what helps your decision.</h2>
-    <div class="cols-3 stack" style="gap: 16px;">
-      <div class="card stack" style="gap: 10px; padding: 20px;">
-        <p class="lbl">Start free</p><p class="price">Free</p>
-        <p>Read the complete Austin sample and tell us about the address you are considering.</p>
-        <a href="sample.html" style="font-weight: 600;">Read the sample</a>
-        <a class="btn btn-outline block" href="#intake" onclick="showIntake()">Tell us about your site</a>
-        <p class="help">Submitting an intake does not create a report or place an order.</p>
-      </div>
-      <div class="card stack" style="gap: 10px; padding: 20px;">
+  <div class="wrap section stack" style="gap: 20px;" id="options">
+    <h2 class="h2" id="options-heading" tabindex="-1">Report options.</h2>
+    <div class="confirm hidden" id="confirm"><span>Report for <strong id="confirm-addr"></strong></span><button class="linkbtn" type="button" onclick="editAddress()">Change address</button></div>
+    <div class="cols-2w stack" style="gap: 16px;">
+      <div class="card primary stack" style="gap: 12px; padding: 20px;">
         <p class="lbl">Site report</p><p class="price">$149</p>
         <p>One address. A web report delivered within three business days, with a target of two.</p>
-        <ul class="small" style="list-style: none; padding: 0; display: grid; gap: 4px; font-size: 14px; line-height: 20px;"><li>Trade area</li><li>Who lives here</li><li>Who works here by day</li><li>How the area is changing</li><li>Coffee market</li><li>Site index and four sub-scores</li><li>Five best-customer neighborhoods</li><li>Data limits and visit checks</li></ul>
-        <a class="btn btn-primary block" href="checkout.html?tier=149">Order the $149 report</a>
-        <p class="help">No account required. Review the terms before paying.</p>
+        <ul class="inc"><li>Trade area by drive time, with 1, 2, and 3 mile rings</li><li>Who lives here</li><li>Who works here by day</li><li>How the area is changing</li><li>The coffee market nearby, shop by shop</li><li>Site index with four sub-scores</li><li>Five neighborhoods that fit a coffee-shop profile</li><li>Data limits and a site-visit checklist</li></ul>
+        <div style="margin-top: auto;" class="stack"><a class="btn btn-primary block order" data-tier="149" href="checkout.html?tier=149">Order the $149 report</a></div>
       </div>
-      <div class="card stack" style="gap: 10px; padding: 20px;">
+      <div class="card stack" style="gap: 12px; padding: 20px;">
         <p class="lbl">Site report, aerial, and call</p><p class="price">$299</p>
-        <p>The same report, plus a USGS aerial image and a 15-minute call about the findings.</p>
-        <a class="btn btn-outline block" href="checkout.html?tier=299">Choose the $299 report</a>
+        <p>Everything in the $149 report, plus an aerial image of the site and a 15-minute call.</p>
+        <ul class="inc"><li>USGS aerial image, to check entry points, parking, and neighboring buildings before your visit</li><li>A 15-minute call to walk through the findings and your visit checklist</li></ul>
+        <div style="margin-top: auto;" class="stack"><a class="btn btn-outline block order" data-tier="299" href="checkout.html?tier=299">Choose the $299 report</a></div>
       </div>
     </div>
+    <p class="help">No account required. Tupll prepares each report after the order is placed. Review the <a href="terms.html">terms</a> and <a href="terms.html#refunds">refund policy</a> before paying.</p>
+    <p class="small"><strong>Not ready to order?</strong> <a href="sample.html">Read the complete sample</a>, free and without an account, or <button class="linkbtn" type="button" onclick="openIntake()">ask Tupll a question first</button>.</p>
   </div>
 
-  <div class="wrap section cols-side" id="intake">
+  <div class="wrap section cols-side hidden" id="intake">
     <div class="stack" style="gap: 12px;">
-      <h2 class="h2" id="intake-heading" tabindex="-1">What do you need to know before signing?</h2>
-      <p>Share your address and the question that matters most. This is not an order, and no automated result is sent.</p>
+      <h2 class="h2" id="intake-heading" tabindex="-1">Ask Tupll a question first.</h2>
+      <p>Tupll reads every question and replies by email when we can help with your decision. This is not an order.</p>
     </div>
     <form class="card stack" style="gap: 18px; padding: 20px;" id="intake-form" onsubmit="return sendIntake(event)">
-      <div class="form-2">
-        <div><label class="fl" for="i-addr">Candidate address</label><input class="input" id="i-addr" name="address" required placeholder="Street address, city, Texas ZIP"><p class="help" style="margin-top: 6px;">The Texas address you are considering for a coffee shop.</p></div>
-        <div><label class="fl" for="i-date">Decision deadline</label><input class="input" id="i-date" name="deadline" type="date"><p class="help" style="margin-top: 6px;">When do you need to make the lease decision?</p><label class="check"><input type="checkbox" name="no_deadline" onchange="document.getElementById('i-date').disabled = this.checked"> I do not have a deadline yet.</label></div>
-      </div>
+      <div><label class="fl" for="i-addr">Candidate address</label><input class="input" id="i-addr" name="address" required placeholder="Street address, city, Texas ZIP"></div>
       <div class="stack" style="gap: 8px;">
         <label class="fl" for="i-q" style="margin: 0;">The one question you most want answered</label>
-        <p class="help">Start with an example.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 8px;">
           <button type="button" class="chip chip-btn" onclick="seed(this)">Are there enough nearby residents and daytime workers for my coffee shop?</button>
           <button type="button" class="chip chip-btn" onclick="seed(this)">How much coffee competition is close to this address?</button>
           <button type="button" class="chip chip-btn" onclick="seed(this)">What should I check on a site visit before signing the lease?</button>
         </div>
         <textarea class="textarea" id="i-q" name="question" required placeholder="What would help you decide whether to sign?"></textarea>
-        <p class="help">Focus on the decision that matters most. Submitting this form does not generate an answer.</p>
       </div>
       <div class="form-2">
-        <div><label class="fl" for="i-email">Email</label><input class="input" id="i-email" name="email" type="email" required placeholder="you@example.com"><p class="help" style="margin-top: 6px;">Tupll may contact you about this site and your decision. No account is created.</p></div>
-        <div style="display: flex; align-items: flex-end;"><p class="help">Have a broker packet or site plan? Mention it in your question and we will ask for it by email.</p></div>
+        <div><label class="fl" for="i-email">Email</label><input class="input" id="i-email" name="email" type="email" required placeholder="you@example.com"></div>
+        <div><label class="fl" for="i-date">Lease decision date <span style="font-weight: 400; color: var(--muted);">(optional)</span></label><input class="input" id="i-date" name="deadline" type="date"></div>
       </div>
-      <label class="check"><input type="checkbox" required> I agree that Tupll may contact me about this site and my decision, and I have read the <a href="terms.html#privacy">Privacy notice</a>.</label>
-      <div class="stack" style="gap: 8px;">
-        <button class="btn btn-primary block" type="submit" id="intake-submit">Send my site details</button>
-        <p class="help">Free to submit. This is not an order, and no automated report or answer is sent.</p>
-      </div>
+      <label class="check"><input type="checkbox" required><span>I agree that Tupll may contact me about this site, and I have read the <a href="terms.html#privacy">privacy notice</a>.</span></label>
+      <button class="btn btn-primary block" type="submit" id="intake-submit">Send my question</button>
     </form>
     <div class="card stack hidden" style="gap: 12px; padding: 20px;" id="intake-sent">
-      <h3 class="h3">Thanks. Your site details are with Tupll.</h3>
-      <p>No order has been placed, and no report is generated from this form. Tupll may email you to better understand your decision.</p>
+      <h3 class="h3">Thanks. Your question is with Tupll.</h3>
+      <p>No order has been placed. Tupll replies by email when we can help with your decision.</p>
       <a href="sample.html" style="font-weight: 600;">Read the complete sample</a>
-      <a class="btn btn-outline" href="checkout.html?tier=149">Order a site report</a>
     </div>
   </div>
 
-  <div class="wrap section cols-side">
-    <div></div>
-    <div class="stack">
-      <details><summary>Who is this for?</summary><p class="body small">An independent owner considering one Texas address for a coffee shop, including a first-time owner deciding whether to sign a lease.</p></details>
-      <details><summary>What will I receive?</summary><p class="body small">A web report covering the trade area, residents, daytime workers, local change, coffee competition, an area-conditions index, and five best-customer neighborhoods. The $299 option also includes a USGS aerial image and a 15-minute call.</p></details>
-      <details open><summary>When will I receive it?</summary><p class="body small">Within three business days of payment, with a target of two. Your delivery date appears before payment. A confirmation email within one minute names your preparer and repeats that date.</p></details>
-      <details><summary>Can it tell me whether the shop will succeed?</summary><p class="body small">No. The index summarizes public-data conditions, not sales or business success. Rent, operating costs, visibility, parking, and the experience at the storefront still need your judgment.</p></details>
-      <details><summary>What is the refund policy?</summary><p class="body small">Read the <a href="terms.html#refunds">refund policy</a> before paying. You will also review a summary and accept the terms at checkout.</p></details>
-    </div>
+  <div class="wrap section stack narrow" style="gap: 0; margin-inline: auto;">
+    <h2 class="h2" style="padding-bottom: 16px;">Questions.</h2>
+    <details><summary>Who is this for?</summary><p class="body small">An independent owner considering one Texas address for a coffee shop, including a first-time owner deciding whether to sign a lease.</p></details>
+    <details open><summary>What will I receive, and when?</summary><p class="body small">A web report covering the trade area, residents, daytime workers, local change, coffee competition, an area-conditions index, and five neighborhoods that fit a coffee-shop profile. It arrives within three business days of payment, with a target of two. Your delivery date appears before payment and is repeated in a confirmation email.</p></details>
+    <details><summary>Can it tell me whether the shop will succeed?</summary><p class="body small">No. The index summarizes public-data conditions, not sales or business success. Rent, operating costs, visibility, parking, and the experience at the storefront still need your judgment, and a site visit.</p></details>
+    <details><summary>What is the refund policy?</summary><p class="body small">Read the <a href="terms.html#refunds">refund policy</a> before paying. You will also review a summary and accept the terms at checkout.</p></details>
   </div>
 
-  <div class="wrap section"><p class="help">Public data can help you ask better questions. It cannot replace a site visit or a review of your lease economics.</p></div>
+  <div class="wrap section"><div class="mocknote"><strong>Mockup note, not part of the page.</strong> This is the Stage 1a flow: address, report options, checkout. The Stage 1b design, where the address box returns a free instant result, is previewed at <a href="stage1b.html">stage1b.html</a> and <a href="lookup.html">lookup.html</a>.</div></div>
 </main>
 
 <footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check for coffee shops.</p><div class="links"><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
 
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="data/sample.js"></script>
+<script src="map.js"></script>
 <script>
-function showIntake() { document.getElementById('intake-form').classList.remove('hidden'); document.getElementById('intake-sent').classList.add('hidden'); }
-function openIntake(e) {
+tupllMap('map-hero', { rings: [1, 2], shops: true, shopLimitMiles: 2, interactive: false, padding: 10 });
+function isTexas(v) { return /\b(tx|texas)\b/i.test(v) || /\b7[5-9]\d{3}\b/.test(v); }
+function confirmAddress(e) {
   e.preventDefault();
-  var v = document.getElementById('addr').value.trim();
-  var isTexas = /\b(tx|texas)\b/i.test(v) || /\b7[5-9]\d{3}\b/.test(v);
-  if (v && !isTexas) { document.getElementById('addr-error').classList.remove('hidden'); return false; }
-  document.getElementById('addr-error').classList.add('hidden');
+  var v = document.getElementById('addr').value.trim(), err = document.getElementById('addr-error');
+  if (!v) { document.getElementById('addr').focus(); return false; }
+  if (!isTexas(v)) { err.classList.remove('hidden'); return false; }
+  err.classList.add('hidden');
+  document.getElementById('confirm-addr').textContent = v;
+  document.getElementById('confirm').classList.remove('hidden');
   document.getElementById('i-addr').value = v;
-  showIntake();
-  document.getElementById('intake-heading').scrollIntoView({ behavior: 'smooth', block: 'start' });
-  document.getElementById('intake-heading').focus();
+  document.querySelectorAll('a.order').forEach(function (a) { a.href = 'checkout.html?tier=' + a.dataset.tier + '&address=' + encodeURIComponent(v); });
+  var h = document.getElementById('options-heading'); h.scrollIntoView({ behavior: 'smooth', block: 'start' }); h.focus({ preventScroll: true });
   return false;
+}
+function editAddress() { var a = document.getElementById('addr'); a.scrollIntoView({ behavior: 'smooth', block: 'center' }); a.focus({ preventScroll: true }); a.select(); }
+function openIntake() {
+  document.getElementById('intake').classList.remove('hidden');
+  document.getElementById('intake-form').classList.remove('hidden'); document.getElementById('intake-sent').classList.add('hidden');
+  var h = document.getElementById('intake-heading'); h.scrollIntoView({ behavior: 'smooth', block: 'start' }); h.focus({ preventScroll: true });
 }
 function seed(btn) {
   var q = document.getElementById('i-q');
@@ -144,10 +146,11 @@ function seed(btn) {
 }
 function sendIntake(e) {
   e.preventDefault();
-  var b = document.getElementById('intake-submit'); b.textContent = 'Sending your details…'; b.disabled = true;
-  setTimeout(function () { document.getElementById('intake-form').classList.add('hidden'); document.getElementById('intake-sent').classList.remove('hidden'); b.textContent = 'Send my site details'; b.disabled = false; }, 700);
+  var b = document.getElementById('intake-submit'); b.textContent = 'Sending your question…'; b.disabled = true;
+  setTimeout(function () { document.getElementById('intake-form').classList.add('hidden'); document.getElementById('intake-sent').classList.remove('hidden'); b.textContent = 'Send my question'; b.disabled = false; }, 700);
   return false;
 }
+if (location.hash === '#intake') openIntake();
 </script>
 </body>
 </html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Free lookup, 2110 S Lamar Blvd | Tupll Site Check</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&family=Geist+Mono&display=swap">
+<link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site"><div class="wrap"><a href="stage1b.html"><img src="tupll-logo.png" alt="Tupll"></a><a class="util" href="sample.html">View a sample report</a></div></header>
+
+<main class="wrap" style="padding-bottom: 40px;">
+  <div class="mocknote" style="margin-top: 16px;"><strong>Mockup note, not part of the page.</strong> Stage 1b design preview. The lookup always shows the sample address here; every figure on this page is real public data for that address.</div>
+
+  <form class="searchbar" style="padding-top: 20px;" onsubmit="return false;">
+    <input class="input" aria-label="Texas street address" value="2110 S Lamar Blvd, Austin, TX 78704" style="background: var(--card);">
+    <button class="btn btn-outline" type="submit">Show nearby coffee shops</button>
+  </form>
+
+  <div class="stack" style="gap: 6px; padding-top: 28px;">
+    <p class="lbl">Free lookup · coffee shop</p>
+    <h1 class="h1">2110 S Lamar Blvd</h1>
+    <p class="lead">Austin, TX 78704</p>
+  </div>
+
+  <div class="section stack" style="gap: 14px; padding-top: 24px;">
+    <p class="verdict"><span class="hl" style="color: var(--indie);">16 coffee shops</span> are listed within 1 mile. The nearest is <span class="hl" style="color: var(--indie);">0.2 miles</span> away.</p>
+    <figure class="map" style="margin: 0;"><div class="mapbox tall" id="map-lookup" role="img" aria-label="Map of coffee shops listed within 3 miles of the address"></div></figure>
+    <div class="legend help"><span class="key"><i style="background: var(--indie);"></i>Independent</span><span class="key"><i style="background: var(--chain);"></i>Chain</span><span class="key"><i class="line"></i>1 mile</span><span class="key"><i class="line dash"></i>2 miles</span><span class="key"><i class="line dot"></i>3 miles</span><span>Select a dot for the name.</span></div>
+    <div class="scroll"><table>
+      <thead><tr><th>Within</th><th class="n">1 mile</th><th class="n">2 miles</th><th class="n">3 miles</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Coffee shops listed</strong></td><td class="n"><strong>16</strong></td><td class="n"><strong>64</strong></td><td class="n"><strong>135</strong></td></tr>
+        <tr><td>Residents</td><td class="n">21,900</td><td class="n">64,600</td><td class="n">137,100</td></tr>
+        <tr><td>Households, estimate</td><td class="n">12,100</td><td class="n">37,300</td><td class="n">72,400</td></tr>
+        <tr><td>Jobs</td><td class="n">11,600</td><td class="n">108,300</td><td class="n">267,400</td></tr>
+      </tbody>
+    </table></div>
+    <p class="src">Coffee shops: Overture Places, release 2026-08-19. Residents: 2020 Census. Households: ACS 2019 to 2023. Jobs: LODES 2023. Listings can be incomplete or out of date. A dash means no data; a zero means none listed.</p>
+    <p class="help">This was your free lookup. Add an email for two more. <a href="#">Add email</a></p>
+  </div>
+
+  <div class="section cols-2 stack" style="gap: 24px;">
+    <div class="stack" style="gap: 12px;">
+      <h2 class="h2">Counts are the start. The report is the second opinion.</h2>
+      <p>The lookup counts what is near the address. The report compares it, maps how far customers can drive, shows where the area is heading, and tells you what to check before you sign.</p>
+      <p class="small">Tupll prepares each report for the address after the order is placed. It is delivered as a web page within three business days.</p>
+      <a href="sample.html" style="font-weight: 600;">View a sample report</a>
+    </div>
+    <div class="card primary stack" style="gap: 12px; padding: 20px;">
+      <p class="lbl">Site report for 2110 S Lamar Blvd</p><p class="price">$149</p>
+      <ul class="inc"><li>Trade area by drive time, not just circles</li><li>Residents and workers compared with the wider area</li><li>How the area is changing</li><li>Every nearby coffee shop by name, distance, and chain status</li><li>Site index with four sub-scores</li><li>Five neighborhoods that fit a coffee-shop profile</li><li>Data limits and a site-visit checklist</li></ul>
+      <a class="btn btn-primary block" href="checkout.html?tier=149&address=2110%20S%20Lamar%20Blvd%2C%20Austin%2C%20TX%2078704">Order the $149 report for this address</a>
+      <p class="help">Or <a href="checkout.html?tier=299&address=2110%20S%20Lamar%20Blvd%2C%20Austin%2C%20TX%2078704">$299 with an aerial image and a 15-minute call</a>. No account required.</p>
+    </div>
+  </div>
+</main>
+
+<footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check for coffee shops.</p><div class="links"><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
+
+<script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<script src="data/sample.js"></script>
+<script src="map.js"></script>
+<script>tupllMap('map-lookup', { rings: [1, 2, 3], shops: true });</script>
+</body>
+</html>

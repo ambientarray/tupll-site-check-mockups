@@ -20,7 +20,7 @@
   <form class="stack" style="gap: 20px;" id="co" onsubmit="return goStripe(event)">
     <div class="stack" style="gap: 10px;" role="radiogroup" aria-label="Report tier">
       <label class="card" style="display: flex; gap: 12px; padding: 14px; cursor: pointer;" id="tier149-card"><input type="radio" name="tier" value="149" checked onchange="pickTier()" style="accent-color: var(--primary); width: 20px; height: 20px; margin: 3px 0 0;"><span><span style="font-weight: 600; display: block;">Site report. $149.</span><span class="help">The complete web report for one coffee-shop address.</span></span></label>
-      <label class="card" style="display: flex; gap: 12px; padding: 14px; cursor: pointer;" id="tier299-card"><input type="radio" name="tier" value="299" onchange="pickTier()" style="accent-color: var(--primary); width: 20px; height: 20px; margin: 3px 0 0;"><span><span style="font-weight: 600; display: block;">Site report, aerial, and call. $299.</span><span class="help">The same report, plus a USGS aerial image and a 15-minute call.</span></span></label>
+      <label class="card" style="display: flex; gap: 12px; padding: 14px; cursor: pointer;" id="tier299-card"><input type="radio" name="tier" value="299" onchange="pickTier()" style="accent-color: var(--primary); width: 20px; height: 20px; margin: 3px 0 0;"><span><span style="font-weight: 600; display: block;">Site report, aerial, and call. $299.</span><span class="help">Everything in the $149 report, plus a USGS aerial image of the site and a 15-minute call.</span></span></label>
     </div>
 
     <div class="card stack" style="gap: 16px; padding: 16px;">
@@ -43,7 +43,7 @@
 
     <dl class="stack" style="gap: 0;">
       <div class="dl" style="border-top: 1px solid var(--border);"><dt>Delivery by</dt><dd>Tuesday, October 6, 2026</dd></div>
-      <div class="dl"><dt>Prepared by</dt><dd>Jed Jones, Tupll</dd></div>
+      <div class="dl"><dt>Prepared by</dt><dd>Tupll</dd></div>
       <div class="dl"><dt>Format</dt><dd>Web report</dd></div>
       <div class="dl"><dt>Selected price</dt><dd id="co-price">$149</dd></div>
     </dl>
@@ -77,6 +77,7 @@ function pickTier() {
 }
 (function () {
   var q = new URLSearchParams(location.search);
+  if (q.get('address')) document.getElementById('co-addr').textContent = q.get('address');
   if (q.get('tier') === '299') document.querySelector('input[name=tier][value="299"]').checked = true;
   pickTier();
 })();
