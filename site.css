@@ -242,3 +242,7 @@ td.win { font-weight: 600; color: var(--drive); }
   .compose-subs .score.sub::before { content: none; }
   .compose .lead-score .big { font-size: 56px; line-height: 60px; }
 }
+
+/* Revision 7: price and scope line inside the white hero panel. */
+.panel-note { grid-column: 1 / -1; font-size: 13px; line-height: 19px; color: var(--muted); margin: 0; }
+.hero-photo .panel-note a { color: var(--primary); }

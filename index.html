@@ -22,9 +22,9 @@
         <div><label class="fl" for="btype">Business type</label><select class="select input" id="btype" name="type"><option value="coffee-shop" selected>Coffee shop</option></select></div>
         <div><label class="fl" for="addr">Address you are considering</label><input class="input" id="addr" name="address" placeholder="Street address, city, Texas ZIP" autocomplete="street-address"></div>
         <button class="btn btn-primary" type="submit">Continue to report options</button>
+        <p class="panel-note">One-address report $149. With aerial image and 15-minute call, $299. Prepared within three business days. Texas addresses only. No sign-in. <a href="sample.html">See a sample report</a></p>
       </form>
       <p class="err hidden" id="addr-error" role="alert">Site Check is currently available for Texas addresses. Enter a Texas address, or <a href="sample.html">see the sample report</a>.</p>
-      <p class="help">Texas addresses only. No sign-in. Reports from $149, delivered within three business days. <a href="sample.html">See a sample report</a></p>
     </div>
     <span class="credit">Aerial photograph: USGS, South Austin</span>
   </section>
@@ -34,14 +34,14 @@
       <h2 class="h2">What you get: one headline number, built from two.</h2>
       <p class="lead">Tupll compares the neighborhood around your address with the locations of existing independent coffee shops. On every number, 100 means typical and higher is better.</p>
     </div>
-    <p class="help compose-note"><strong>Illustrative scores.</strong> These are relative scores, not percentages or grades. The two components are combined, not added. The shaded band on each scale is the likely range.</p>
+    <p class="help compose-note"><strong>Illustrative scores.</strong> These are relative scores, not percentages or grades. The two components are combined, not added, because a good spot needs both. The shaded band shows the likely range the report will give for each score once the model is tested.</p>
     <div class="compose">
       <div class="card score lead-score">
         <p class="lbl">The headline number</p>
         <h3 class="h3">Location Index</h3>
         <p class="big">108</p>
         <div class="scale" aria-hidden="true"><span class="rng" style="left: 51%; width: 18%;"></span><span class="typ"></span><span class="mark" style="left: 60%;"></span></div><div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
-        <p class="small">How promising this spot looks next to the locations of existing independent coffee shops. 130 means about 30 percent more promising than typical. 80 means about 20 percent less.</p>
+        <p class="small">How this spot compares with the locations of existing independent coffee shops. 100 is typical. Higher means the location compares better on what Tupll measures.</p>
       </div>
       <div class="compose-link" aria-hidden="true"><svg viewBox="0 0 64 100" preserveAspectRatio="none"><path d="M0 50 H32 M32 25 V75 M32 25 H64 M32 75 H64" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"/></svg></div>
       <div class="compose-subs">
@@ -49,23 +49,22 @@
         <div class="card score sub">
           <div class="sub-head"><div><p class="lbl">Part of the Location Index</p><h3 class="h3">Customer Draw</h3></div><p class="big">120</p></div>
           <div class="scale" aria-hidden="true"><span class="rng" style="left: 65%; width: 20%;"></span><span class="typ"></span><span class="mark" style="left: 75%;"></span></div><div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
-          <p class="small">How many customers a shop in a place like this tends to pull in. It looks at who lives, works, and drives nearby: households, incomes, daytime workers, traffic on the surrounding roads, and the businesses around it.</p>
+          <p class="small">How strong the customer base around this location is, compared with typical. It looks at who lives, works, and drives nearby: households, incomes, daytime workers, traffic on the surrounding roads, and the businesses around it.</p>
         </div>
         <div class="card score sub">
           <div class="sub-head"><div><p class="lbl">Part of the Location Index</p><h3 class="h3">Staying Power</h3></div><p class="big">90</p></div>
           <div class="scale" aria-hidden="true"><span class="rng" style="left: 28%; width: 19%;"></span><span class="typ"></span><span class="mark" style="left: 37.5%;"></span></div><div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
-          <p class="small">How often coffee shops that opened in places like this were still open three years later. It comes from years of public business records, including the shops that closed.</p>
+          <p class="small">The track record of similar locations. Among coffee shops that opened in places like this in past years, how often they were still open three years later, compared with typical. It draws on years of public business records, including the shops that closed.</p>
         </div>
       </div>
     </div>
-        <div class="callout narrow"><p>The Location Index combines the other two, because a good spot needs both. A corner with big crowds where shops keep closing is not a great corner. Neither is a quiet corner where shops last forever.</p></div>
   </div>
 
   <div class="wrap section stack" style="gap: 20px;">
     <h2 class="h2">How to use the numbers.</h2>
     <div class="steps">
       <div class="step"><div class="n">1</div><div><p style="font-weight: 600;">Compare your options by Location Index.</p><p class="help">Choosing between several addresses? The higher index is the stronger location.</p></div></div>
-      <div class="step"><div class="n">2</div><div><p style="font-weight: 600;">When two are close, look underneath.</p><p class="help">If the likely ranges overlap, treat the locations as tied and let your situation decide. Tight on savings and need to last through a slow start? Favor Staying Power. Well funded and chasing volume? Favor Customer Draw.</p></div></div>
+      <div class="step"><div class="n">2</div><div><p style="font-weight: 600;">When two are close, look underneath.</p><p class="help">If the likely ranges overlap, treat the locations as tied. Then look at which component matters more to your plan: Staying Power if you expect a slow build, Customer Draw if your plan depends on volume.</p></div></div>
       <div class="step"><div class="n">3</div><div><p style="font-weight: 600;">Watch for the warning flag.</p><p class="help">If Customer Draw or Staying Power is unusually low, Tupll flags it, even when the headline number looks fine.</p></div></div>
     </div>
     <div class="scroll"><table>
@@ -77,12 +76,12 @@
         <tr><td>Location C</td><td class="n">95</td><td class="n">115</td><td class="n win">109</td></tr>
       </tbody>
     </table></div>
-    <p class="small narrow">Location B has the biggest crowds and still ranks last, because shops in places like it tend not to last. A and C are effectively tied, and the owner's situation decides between them.</p>
+    <p class="small narrow">Location B has the highest Customer Draw and still ranks last, because shops in places like it have a weaker track record. A and C are effectively tied, and the owner's plan decides between them.</p>
   </div>
 
   <div class="wrap section stack" style="gap: 14px;">
     <h2 class="h2">Tupll compares locations, not businesses.</h2>
-    <p class="lead narrow">It answers one question: if the same owner opened the same shop in each of these places, which place gives better odds?</p>
+    <p class="lead narrow">It answers one question: if the same owner opened the same shop in each of these places, which place compares better?</p>
     <p class="narrow">It cannot see the things that are up to you or specific to the site. A great operator in an average location can outperform a weak operator in a great one. Use the numbers to choose between locations and to spot problems early, alongside your own judgment and a visit to the site.</p>
     <p class="lbl" style="padding-top: 4px;">Not measured</p>
     <ul class="not-measured"><li>The quality of your product</li><li>Your staff and service</li><li>Your prices and hours</li><li>The condition of the building</li><li>Your rent</li><li>Parking</li><li>Signage</li><li>How easy it is to pull in and out of the lot</li></ul>
@@ -128,7 +127,7 @@
     <div class="cols-2w stack" style="gap: 16px;">
       <div class="card primary stack" style="gap: 12px; padding: 20px;">
         <p class="lbl">Site report</p><p class="price">$149</p>
-        <p>One address, one business type. The three numbers and the full neighborhood report, delivered as a web page within three business days, with a target of two.</p>
+        <p>One address, one business type. The three numbers and the full neighborhood report, delivered as a web page within three business days.</p>
         <div style="margin-top: auto;" class="stack"><a class="btn btn-primary block order" data-tier="149" href="checkout.html?tier=149">Order the $149 report</a></div>
       </div>
       <div class="card stack" style="gap: 12px; padding: 20px;">
@@ -175,10 +174,10 @@
   <div class="wrap section stack narrow" style="gap: 0; margin-inline: auto;">
     <h2 class="h2" style="padding-bottom: 16px;">Questions.</h2>
     <details><summary>Who is this for?</summary><p class="body small">An independent owner considering one or more Texas addresses for a coffee shop, including a first-time owner deciding whether to sign a lease. More business types will follow.</p></details>
-    <details open><summary>What will I receive, and when?</summary><p class="body small">A web report for your address with the Location Index, Customer Draw, and Staying Power, and the neighborhood detail behind them. It arrives within three business days of payment, with a target of two. Your delivery date appears before payment and is repeated in a confirmation email.</p></details>
+    <details open><summary>What will I receive, and when?</summary><p class="body small">A web report for your address with the Location Index, Customer Draw, and Staying Power, and the neighborhood detail behind them. It arrives within three business days of payment. Your delivery date appears before payment and is repeated in a confirmation email.</p></details>
     <details><summary>Can it tell me whether my shop will succeed?</summary><p class="body small">No. Tupll compares locations, not businesses. The numbers are relative: they show how this location compares with the locations of existing independent coffee shops. They say nothing about sales, and they cannot see your product, staff, rent, building, parking, or how easy it is to pull into the lot.</p></details>
-    <details><summary>What does 100 mean?</summary><p class="body small">Typical for the locations of existing independent coffee shops. It is not a percentage and not a grade. 130 means the location looks about 30 percent more promising than typical; 80 means about 20 percent less.</p></details>
-    <details><summary>I am comparing several addresses. How does that work?</summary><p class="body small">Order a report for each address. With several saved locations you see them side by side in one table and sort by what matters most to you: the balanced Location Index, higher customer counts, or longevity.</p></details>
+    <details><summary>What does 100 mean?</summary><p class="body small">Typical for the locations of existing independent coffee shops. It is not a percentage and not a grade. Above 100, the location compares better than typical on what Tupll measures; below 100, it compares worse.</p></details>
+    <details><summary>I am comparing several addresses. How does that work?</summary><p class="body small">Order a report for each address. With several saved locations you see them side by side in one table and sort by what matters most to you: the balanced Location Index, Customer Draw, or Staying Power.</p></details>
     <details><summary>What is the refund policy?</summary><p class="body small">Read the <a href="terms.html#refunds">refund policy</a> before paying. You will also review a summary and accept the terms at checkout.</p></details>
   </div>
 
