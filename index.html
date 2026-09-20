@@ -31,37 +31,34 @@
 
   <div class="wrap section stack" style="gap: 20px;" id="what-you-get">
     <div class="stack narrow" style="gap: 10px;">
-      <h2 class="h2">What you get: three numbers about the location.</h2>
+      <h2 class="h2">What you get: one headline number, built from two.</h2>
       <p class="lead">Tupll compares the neighborhood around your address with the locations of existing independent coffee shops. On every number, 100 means typical and higher is better.</p>
     </div>
-    <div class="scores">
+    <p class="help compose-note"><strong>Illustrative scores.</strong> These are relative scores, not percentages or grades. The two components are combined, not added. The shaded band on each scale is the likely range.</p>
+    <div class="compose">
       <div class="card score lead-score">
         <p class="lbl">The headline number</p>
         <h3 class="h3">Location Index</h3>
         <p class="big">108</p>
-        <div class="scale" aria-hidden="true"><span class="rng" style="left: 51%; width: 18%;"></span><span class="typ"></span><span class="mark" style="left: 60%;"></span></div>
-        <div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
+        <div class="scale" aria-hidden="true"><span class="rng" style="left: 51%; width: 18%;"></span><span class="typ"></span><span class="mark" style="left: 60%;"></span></div><div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
         <p class="small">How promising this spot looks next to the locations of existing independent coffee shops. 130 means about 30 percent more promising than typical. 80 means about 20 percent less.</p>
       </div>
-      <div class="card score">
-        <p class="lbl">Underneath it</p>
-        <h3 class="h3">Customer Draw</h3>
-        <p class="big">120</p>
-        <div class="scale" aria-hidden="true"><span class="rng" style="left: 65%; width: 20%;"></span><span class="typ"></span><span class="mark" style="left: 75%;"></span></div>
-        <div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
-        <p class="small">How many customers a shop in a place like this tends to pull in. It looks at who lives, works, and drives nearby: households, incomes, daytime workers, traffic on the surrounding roads, and the businesses around it.</p>
-      </div>
-      <div class="card score">
-        <p class="lbl">Underneath it</p>
-        <h3 class="h3">Staying Power</h3>
-        <p class="big">90</p>
-        <div class="scale" aria-hidden="true"><span class="rng" style="left: 28%; width: 19%;"></span><span class="typ"></span><span class="mark" style="left: 37.5%;"></span></div>
-        <div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
-        <p class="small">How often coffee shops that opened in places like this were still open three years later. It comes from years of public business records, including the shops that closed.</p>
+      <div class="compose-link" aria-hidden="true"><svg viewBox="0 0 64 100" preserveAspectRatio="none"><path d="M0 50 H32 M32 25 V75 M32 25 H64 M32 75 H64" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"/></svg></div>
+      <div class="compose-subs">
+        <p class="lbl compose-lbl"><span class="m">The Location Index is made up of</span><span class="d">Built from these two components</span></p>
+        <div class="card score sub">
+          <div class="sub-head"><div><p class="lbl">Part of the Location Index</p><h3 class="h3">Customer Draw</h3></div><p class="big">120</p></div>
+          <div class="scale" aria-hidden="true"><span class="rng" style="left: 65%; width: 20%;"></span><span class="typ"></span><span class="mark" style="left: 75%;"></span></div><div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
+          <p class="small">How many customers a shop in a place like this tends to pull in. It looks at who lives, works, and drives nearby: households, incomes, daytime workers, traffic on the surrounding roads, and the businesses around it.</p>
+        </div>
+        <div class="card score sub">
+          <div class="sub-head"><div><p class="lbl">Part of the Location Index</p><h3 class="h3">Staying Power</h3></div><p class="big">90</p></div>
+          <div class="scale" aria-hidden="true"><span class="rng" style="left: 28%; width: 19%;"></span><span class="typ"></span><span class="mark" style="left: 37.5%;"></span></div><div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
+          <p class="small">How often coffee shops that opened in places like this were still open three years later. It comes from years of public business records, including the shops that closed.</p>
+        </div>
       </div>
     </div>
-    <p class="help">Example figures. Each number comes with a likely range, shown as the shaded band.</p>
-    <div class="callout narrow"><p>The Location Index combines the other two, because a good spot needs both. A corner with big crowds where shops keep closing is not a great corner. Neither is a quiet corner where shops last forever.</p></div>
+        <div class="callout narrow"><p>The Location Index combines the other two, because a good spot needs both. A corner with big crowds where shops keep closing is not a great corner. Neither is a quiet corner where shops last forever.</p></div>
   </div>
 
   <div class="wrap section stack" style="gap: 20px;">
@@ -113,7 +110,7 @@
         <p class="lbl">In every report</p>
         <ul class="inc" style="font-size: 15px; line-height: 23px; gap: 8px;">
           <li>Location Index, Customer Draw, and Staying Power, each with its likely range and any warning flag</li>
-          <li>The area customers can reach by car, with 1, 2, and 3 mile rings</li>
+          <li>The area within a 12-minute drive of the address, plus 1, 2, and 3 mile rings</li>
           <li>Who lives nearby: households, renters and owners, education, income</li>
           <li>Who works nearby by day</li>
           <li>How the area is changing: home purchases, building permits, population</li>

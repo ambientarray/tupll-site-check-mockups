@@ -206,3 +206,39 @@ td.win { font-weight: 600; color: var(--drive); }
   .searchpanel { padding: 10px; gap: 8px; margin-top: 4px; }
   .searchpanel .fl { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 }
+
+/* Revision 5: the Location Index on the left, its two component scores branching to the right. */
+.compose { display: grid; gap: 0; }
+.compose .lead-score { justify-content: center; }
+.compose-link { display: none; color: var(--accent); }
+.compose-subs { display: grid; gap: 12px; margin: 0 0 0 18px; padding: 14px 0 0 18px; border-left: 2px solid var(--accent); position: relative; }
+.compose-lbl { color: var(--accent); }
+.score.sub { padding: 16px 18px; gap: 6px; }
+.score.sub .big { font-size: 34px; line-height: 38px; }
+.sub-head { display: flex; justify-content: space-between; align-items: flex-end; gap: 12px; }
+@media (min-width: 900px) {
+  .compose { grid-template-columns: minmax(0, 0.9fr) 64px minmax(0, 1.1fr); align-items: stretch; }
+  .compose-link { display: block; }
+  .compose-link svg { display: block; width: 100%; height: 100%; }
+  .compose-subs { margin: 0; padding: 0; border-left: 0; grid-template-rows: 1fr 1fr; gap: 14px; }
+  .compose-lbl { display: none; }
+  .compose .lead-score .big { font-size: 64px; line-height: 68px; }
+  .compose .lead-score { padding: 28px; }
+}
+
+/* Revision 6, after the GPT-6 Astra review of the score block. */
+.compose-lbl .d { display: none; }
+.compose-note { max-width: 760px; }
+.compose-subs .score.sub { position: relative; }
+.compose-subs .score.sub::before { content: ""; position: absolute; left: -19px; top: 50%; width: 18px; border-top: 2px solid var(--accent); }
+@media (max-width: 899px) {
+  .searchpanel .fl { position: static; width: auto; height: auto; overflow: visible; clip: auto; white-space: normal; font-size: 11px; margin-bottom: 3px; }
+}
+@media (min-width: 900px) {
+  .compose { margin-top: 26px; }
+  .compose-subs { position: relative; }
+  .compose-lbl { display: block; position: absolute; left: 0; top: -26px; }
+  .compose-lbl .m { display: none; } .compose-lbl .d { display: inline; }
+  .compose-subs .score.sub::before { content: none; }
+  .compose .lead-score .big { font-size: 56px; line-height: 60px; }
+}

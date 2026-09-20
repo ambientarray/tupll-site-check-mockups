@@ -159,20 +159,29 @@
     <section class="section stack" style="gap: 14px;" id="index">
       <h2 class="h2">The three numbers.<span class="tag">Illustrative</span></h2>
       <p class="verdict">On each number, 100 means typical for the locations of existing independent coffee shops. Higher is better.</p>
-      <div class="scores">
-        <div class="card score lead-score"><p class="lbl">The headline number</p><h3 class="h3">Location Index</h3><p class="big">108</p>
-          <div class="scale" aria-hidden="true"><span class="rng" style="left: 51%; width: 18%;"></span><span class="typ"></span><span class="mark" style="left: 60%;"></span></div>
-          <div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
-          <p class="help" style="color: var(--fg);">Likely range 101 to 115. This spot looks somewhat more promising than typical.</p></div>
-        <div class="card score"><p class="lbl">Underneath it</p><h3 class="h3">Customer Draw</h3><p class="big">120</p>
-          <div class="scale" aria-hidden="true"><span class="rng" style="left: 65%; width: 20%;"></span><span class="typ"></span><span class="mark" style="left: 75%;"></span></div>
-          <div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
-          <p class="help" style="color: var(--fg);">Likely range 112 to 128. Places like this tend to pull in more customers than typical.</p></div>
-        <div class="card score"><p class="lbl">Underneath it</p><h3 class="h3">Staying Power</h3><p class="big">90</p>
-          <div class="scale" aria-hidden="true"><span class="rng" style="left: 28%; width: 19%;"></span><span class="typ"></span><span class="mark" style="left: 37.5%;"></span></div>
-          <div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
-          <p class="help" style="color: var(--fg);">Likely range 82 to 98. Shops that opened in places like this were still open three years later somewhat less often than typical.</p></div>
+      <div class="compose">
+      <div class="card score lead-score">
+        <p class="lbl">The headline number</p>
+        <h3 class="h3">Location Index</h3>
+        <p class="big">108</p>
+        <div class="scale" aria-hidden="true"><span class="rng" style="left: 51%; width: 18%;"></span><span class="typ"></span><span class="mark" style="left: 60%;"></span></div><div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
+        <p class="small">Likely range 101 to 115. This spot looks somewhat more promising than typical.</p>
       </div>
+      <div class="compose-link" aria-hidden="true"><svg viewBox="0 0 64 100" preserveAspectRatio="none"><path d="M0 50 H32 M32 25 V75 M32 25 H64 M32 75 H64" fill="none" stroke="currentColor" stroke-width="2" vector-effect="non-scaling-stroke"/></svg></div>
+      <div class="compose-subs">
+        <p class="lbl compose-lbl"><span class="m">The Location Index is made up of</span><span class="d">Built from these two components</span></p>
+        <div class="card score sub">
+          <div class="sub-head"><div><p class="lbl">Part of the Location Index</p><h3 class="h3">Customer Draw</h3></div><p class="big">120</p></div>
+          <div class="scale" aria-hidden="true"><span class="rng" style="left: 65%; width: 20%;"></span><span class="typ"></span><span class="mark" style="left: 75%;"></span></div><div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
+          <p class="small">Likely range 112 to 128. Places like this tend to pull in more customers than typical.</p>
+        </div>
+        <div class="card score sub">
+          <div class="sub-head"><div><p class="lbl">Part of the Location Index</p><h3 class="h3">Staying Power</h3></div><p class="big">90</p></div>
+          <div class="scale" aria-hidden="true"><span class="rng" style="left: 28%; width: 19%;"></span><span class="typ"></span><span class="mark" style="left: 37.5%;"></span></div><div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
+          <p class="small">Likely range 82 to 98. Shops that opened in places like this were still open three years later somewhat less often than typical.</p>
+        </div>
+      </div>
+    </div>
       <p>The Location Index combines the other two, because a good spot needs both. No warning flag applies here: neither number underneath is unusually low.</p>
       <p class="help">Tupll compares locations, not businesses. The numbers are relative and say nothing about sales. They cannot see your product, staff, prices, rent, the building, parking, signage, or how easy it is to pull in and out of the lot.</p>
     </section>
