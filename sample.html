@@ -22,7 +22,7 @@
     <a href="#works">Who works here by day</a>
     <a href="#change">How the area is changing</a>
     <a href="#market">The coffee market nearby</a>
-    <a href="#index">Site index</a>
+    <a href="#index">The three numbers</a>
     <a href="#neigh">Neighborhoods that fit the profile</a>
     <a href="#honesty">What this report cannot tell you</a>
   </nav>
@@ -37,9 +37,9 @@
       <p class="lead">Austin, TX 78704</p>
       <p>Coffee shop</p>
       <p class="help">Primary trade area: 12-minute drive. Sensitivity view: 1, 2, and 3 miles.</p>
-      <div class="help stack" style="gap: 2px; padding-top: 6px;"><p>Prepared October 1, 2026.</p><p>Prepared by Tupll.</p><p>Reviewed by a Tupll analyst.</p><p class="mono">Report version 1.0</p></div>
+      <div class="help stack" style="gap: 2px; padding-top: 6px;"><p>Prepared October 1, 2026.</p><p>Prepared by Tupll.</p><p class="mono">Report version 1.0</p></div>
       <details style="margin-top: 10px;"><summary>Data vintages</summary><p class="body help">2020 Census blocks, ACS 2019 to 2023, LODES 2023, HMDA 2024, Building Permits Survey 2025, Population Estimates 2025, Overture Places release 2026-08-19, OpenStreetMap routing as of September 2026. Texas first-sale source date is added when the report is generated.</p></details>
-      <details class="disc-toc"><summary>In this report</summary><div class="body stack" style="gap: 6px;"><a href="#summary">What stands out</a><a href="#trade">The area this report describes</a><a href="#lives">Who lives here</a><a href="#works">Who works here by day</a><a href="#change">How the area is changing</a><a href="#market">The coffee market nearby</a><a href="#index">Site index</a><a href="#neigh">Neighborhoods that fit the profile</a><a href="#honesty">What this report cannot tell you</a></div></details>
+      <details class="disc-toc"><summary>In this report</summary><div class="body stack" style="gap: 6px;"><a href="#summary">What stands out</a><a href="#trade">The area this report describes</a><a href="#lives">Who lives here</a><a href="#works">Who works here by day</a><a href="#change">How the area is changing</a><a href="#market">The coffee market nearby</a><a href="#index">The three numbers</a><a href="#neigh">Neighborhoods that fit the profile</a><a href="#honesty">What this report cannot tell you</a></div></details>
     </div>
 
     <section class="section stack" style="gap: 16px;" id="summary">
@@ -157,20 +157,24 @@
     </section>
 
     <section class="section stack" style="gap: 14px;" id="index">
-      <h2 class="h2">Site index: area conditions.<span class="tag">Illustrative</span></h2>
-      <p class="verdict">The index summarizes the sections above. In this example, demand fit scores higher than competitive room.</p>
-      <div class="card stack" style="gap: 6px; padding: 20px;">
-        <p style="font-size: 48px; line-height: 52px; font-weight: 600; color: var(--primary); font-variant-numeric: tabular-nums;">71 <span style="font-size: 18px; color: var(--muted);">/ 100</span></p>
-        <p class="help">An index of area conditions from public data, ranked against existing Texas coffee-shop locations. It is not a prediction of your success.</p>
+      <h2 class="h2">The three numbers.<span class="tag">Illustrative</span></h2>
+      <p class="verdict">On each number, 100 means typical for the locations of existing independent coffee shops. Higher is better.</p>
+      <div class="scores">
+        <div class="card score lead-score"><p class="lbl">The headline number</p><h3 class="h3">Location Index</h3><p class="big">108</p>
+          <div class="scale" aria-hidden="true"><span class="rng" style="left: 51%; width: 18%;"></span><span class="typ"></span><span class="mark" style="left: 60%;"></span></div>
+          <div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
+          <p class="help" style="color: var(--fg);">Likely range 101 to 115. This spot looks somewhat more promising than typical.</p></div>
+        <div class="card score"><p class="lbl">Underneath it</p><h3 class="h3">Customer Draw</h3><p class="big">120</p>
+          <div class="scale" aria-hidden="true"><span class="rng" style="left: 65%; width: 20%;"></span><span class="typ"></span><span class="mark" style="left: 75%;"></span></div>
+          <div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
+          <p class="help" style="color: var(--fg);">Likely range 112 to 128. Places like this tend to pull in more customers than typical.</p></div>
+        <div class="card score"><p class="lbl">Underneath it</p><h3 class="h3">Staying Power</h3><p class="big">90</p>
+          <div class="scale" aria-hidden="true"><span class="rng" style="left: 28%; width: 19%;"></span><span class="typ"></span><span class="mark" style="left: 37.5%;"></span></div>
+          <div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
+          <p class="help" style="color: var(--fg);">Likely range 82 to 98. Shops that opened in places like this were still open three years later somewhat less often than typical.</p></div>
       </div>
-      <div class="tiles tiles-4">
-        <div class="card tile"><p class="lbl">Demand fit</p><p class="num">78 <span class="help">/ 100</span></p><p class="help">Weight: 35%</p><p class="help" style="color: var(--fg);">Renter and degree shares are above the three-county comparison.</p></div>
-        <div class="card tile"><p class="lbl">Competitive room</p><p class="num">58 <span class="help">/ 100</span></p><p class="help">Weight: 25%</p><p class="help" style="color: var(--fg);">64 coffee shops are listed within 2 miles.</p></div>
-        <div class="card tile"><p class="lbl">Nearby jobs</p><p class="num">74 <span class="help">/ 100</span></p><p class="help">Weight: 20%</p><p class="help" style="color: var(--fg);">4,000 jobs are counted within half a mile. It does not measure entry or parking.</p></div>
-        <div class="card tile"><p class="lbl">Momentum</p><p class="num">72 <span class="help">/ 100</span></p><p class="help">Weight: 20%</p><p class="help" style="color: var(--fg);">Home-purchase activity is above the area comparison.</p></div>
-      </div>
-      <p class="help">Weights are fixed for every coffee-shop report in version 1.0.</p>
-      <details><summary>How the index is calculated</summary><p class="body small">Index = 0.35 × Demand fit + 0.25 × Competitive room + 0.20 × Nearby jobs + 0.20 × Momentum, rounded to the nearest whole number. Each sub-score is the average percentile rank of its components among existing Texas coffee-shop locations, computed with the same trade-area rule. Components with no data for this address are dropped and named; if a whole sub-score is unavailable, the index is not computed. Full rules: methodology version 1.0.</p></details>
+      <p>The Location Index combines the other two, because a good spot needs both. No warning flag applies here: neither number underneath is unusually low.</p>
+      <p class="help">Tupll compares locations, not businesses. The numbers are relative and say nothing about sales. They cannot see your product, staff, prices, rent, the building, parking, signage, or how easy it is to pull in and out of the lot.</p>
     </section>
 
     <section class="section stack" style="gap: 14px;" id="neigh">
@@ -195,7 +199,7 @@
     <section class="section stack" style="gap: 14px;" id="honesty">
       <h2 class="h2">What this report cannot tell you.</h2>
       <ol class="small" style="display: grid; gap: 8px;">
-        <li>The site index describes public-data conditions. It is not a forecast of sales or success.</li>
+        <li>The three numbers compare locations, not businesses. They are relative and say nothing about sales.</li>
         <li>The neighborhood ranking is rule-based, not learned from your customers.</li>
         <li>First-sale dates come from Texas records and are provided only for Texas locations where available.</li>
         <li>Sources describe different periods. Each section states its data vintage.</li>
@@ -211,7 +215,7 @@
 </div>
 </main>
 
-<footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check for coffee shops. Sample.</p><div class="links"><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
+<footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check. Sample.</p><div class="links"><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="data/sample.js"></script>

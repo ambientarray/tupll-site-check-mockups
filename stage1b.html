@@ -4,48 +4,37 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Tupll Site Check for coffee shops (Stage 1b preview)</title>
+<title>Tupll Site Check (Stage 1b preview)</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&family=Geist+Mono&display=swap">
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
-<header class="site"><div class="wrap"><a href="stage1b.html"><img src="tupll-logo.png" alt="Tupll"></a><a class="util" href="sample.html">View a sample report</a></div></header>
+<header class="site"><div class="wrap"><a href="stage1b.html"><img src="tupll-logo.png" alt="Tupll"></a><a class="util" href="sample.html">See a sample report</a></div></header>
 
 <main>
-  <div class="wrap" style="padding-top: 16px;"><div class="mocknote"><strong>Mockup note, not part of the page.</strong> Stage 1b first screen, for when the free lookup exists. The rest of the page matches <a href="index.html">the Stage 1a landing page</a>. The button always opens the sample address result.</div></div>
+  <div class="wrap" style="padding-top: 16px;"><div class="mocknote"><strong>Mockup note, not part of the page.</strong> Stage 1b first screen, for when the free lookup exists. Everything below the hero matches <a href="index.html">the Stage 1a landing page</a>. The button always opens the sample address result.</div></div>
 
-  <div class="wrap section hero stack" style="padding-top: 28px; gap: 28px;">
-    <div class="stack" style="gap: 14px;">
-      <p class="lbl">For independent coffee-shop owners in Texas</p>
-      <h1 class="h1">Check the area before signing your coffee-shop lease.</h1>
-      <p class="lead">See coffee shops within 1, 2, and 3 miles. Free, instant, no login.</p>
-      <form class="card stack" style="gap: 12px; padding: 16px;" onsubmit="location.href='lookup.html'; return false;">
+  <section class="hero-photo" aria-label="Check an address" style="margin-top: 16px;">
+    <div class="inner">
+      <p class="lbl">For independent shop owners in Texas</p>
+      <h1 class="h1">Check the area before signing your lease.</h1>
+      <p class="lead">See the coffee shops, residents, and jobs within 1, 2, and 3 miles of any Texas address. Free, instant, no login.</p>
+      <form class="searchpanel" onsubmit="location.href='lookup.html'; return false;">
+        <div><label class="fl" for="btype">Business type</label><select class="select input" id="btype" name="type"><option value="coffee-shop" selected>Coffee shop</option></select></div>
         <div><label class="fl" for="addr">Texas street address</label><input class="input" id="addr" name="address" placeholder="Street address, city, Texas ZIP" autocomplete="street-address"></div>
-        <button class="btn btn-primary block" type="submit">Show nearby coffee shops</button>
-        <p class="help">Reports prepared and reviewed by Tupll from public data. From $149, delivered within three business days. Not a sales forecast.</p>
+        <button class="btn btn-primary" type="submit">Show what is nearby</button>
       </form>
+      <p class="help">Full location reports prepared by Tupll from $149, delivered within three business days. <a href="sample.html">See a sample report</a></p>
     </div>
-    <a class="card preview" href="sample.html" style="text-decoration: none; color: inherit; display: block;">
-      <div class="mapbox short" id="map-hero" role="img" aria-label="Map of coffee shops within 2 miles of the sample address"></div>
-      <div class="body">
-        <p class="lbl">Sample report · 2110 S Lamar Blvd, Austin</p>
-        <ul class="facts">
-          <li class="c2"><strong>16 coffee shops</strong> listed within 1 mile; the nearest is 0.2 miles away</li>
-          <li><strong>62% of households rent</strong>, against 42% across the three-county area</li>
-          <li class="c3"><strong>4,000 jobs</strong> within half a mile</li>
-        </ul>
-        <span style="font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">View a sample report</span>
-      </div>
-    </a>
-  </div>
+    <span class="credit">Aerial photograph: USGS, South Austin</span>
+  </section>
 </main>
 
-<footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check for coffee shops.</p><div class="links"><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
+<footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check.</p><div class="links"><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="data/sample.js"></script>
 <script src="map.js"></script>
-<script>tupllMap('map-hero', { rings: [1, 2], shops: true, shopLimitMiles: 2, interactive: false, padding: 10 });</script>
 </body>
 </html>

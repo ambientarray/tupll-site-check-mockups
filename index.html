@@ -4,71 +4,145 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>Tupll Site Check for coffee shops</title>
+<title>Tupll Site Check</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&family=Geist+Mono&display=swap">
 <link rel="stylesheet" href="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css">
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
-<header class="site"><div class="wrap"><a href="index.html"><img src="tupll-logo.png" alt="Tupll"></a><a class="util" href="sample.html">Read the sample</a></div></header>
+<header class="site"><div class="wrap"><a href="index.html"><img src="tupll-logo.png" alt="Tupll"></a><a class="util" href="sample.html">See a sample report</a></div></header>
 
 <main>
-  <div class="wrap section hero stack" style="padding-top: 32px; gap: 28px;">
-    <div class="stack" style="gap: 14px;">
-      <p class="lbl">For independent coffee-shop owners in Texas</p>
+  <section class="hero-photo" aria-label="Check an address">
+    <div class="inner">
+      <p class="lbl">For independent shop owners in Texas</p>
       <h1 class="h1">An independent second opinion before you sign the lease.</h1>
-      <p class="lead">A public-data report on one address, prepared and reviewed by Tupll. $149, delivered within three business days.</p>
-      <form class="card stack" style="gap: 12px; padding: 16px;" id="address-form" onsubmit="return confirmAddress(event)">
-        <div><label class="fl" for="addr">Candidate address</label><input class="input" id="addr" name="address" placeholder="Street address, city, Texas ZIP" autocomplete="street-address"></div>
-        <button class="btn btn-primary block" type="submit">Continue to report options</button>
-        <p class="help">Texas addresses only. No sign-in. The report describes public-data conditions; it is not a forecast of sales.</p>
-        <p class="help hidden" id="addr-error" role="alert">Site Check is currently available for Texas coffee-shop addresses. Enter a Texas address, or <a href="sample.html">read the Austin sample</a>.</p>
+      <p class="lead">Type the address you are considering and the kind of shop you want to open. Tupll studies the neighborhood and scores the location.</p>
+      <form class="searchpanel" id="address-form" onsubmit="return confirmAddress(event)">
+        <div><label class="fl" for="btype">Business type</label><select class="select input" id="btype" name="type"><option value="coffee-shop" selected>Coffee shop</option></select></div>
+        <div><label class="fl" for="addr">Address you are considering</label><input class="input" id="addr" name="address" placeholder="Street address, city, Texas ZIP" autocomplete="street-address"></div>
+        <button class="btn btn-primary" type="submit">Continue to report options</button>
       </form>
+      <p class="err hidden" id="addr-error" role="alert">Site Check is currently available for Texas addresses. Enter a Texas address, or <a href="sample.html">see the sample report</a>.</p>
+      <p class="help">Texas addresses only. No sign-in. Reports from $149, delivered within three business days. <a href="sample.html">See a sample report</a></p>
     </div>
-    <a class="card preview" href="sample.html" style="text-decoration: none; color: inherit; display: block;" aria-label="Read the complete sample report for 2110 S Lamar Blvd, Austin">
-      <div class="mapbox short" id="map-hero" role="img" aria-label="Map of coffee shops within 2 miles of the sample address"></div>
-      <div class="body">
-        <p class="lbl">Sample report · 2110 S Lamar Blvd, Austin</p>
-        <ul class="facts">
-          <li class="c2"><strong>16 coffee shops</strong> listed within 1 mile; the nearest is 0.2 miles away</li>
-          <li><strong>62% of households rent</strong>, against 42% across the three-county area</li>
-          <li class="c3"><strong>4,000 jobs</strong> within half a mile</li>
-        </ul>
-        <span style="font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">Read the complete sample</span>
+    <span class="credit">Aerial photograph: USGS, South Austin</span>
+  </section>
+
+  <div class="wrap section stack" style="gap: 20px;" id="what-you-get">
+    <div class="stack narrow" style="gap: 10px;">
+      <h2 class="h2">What you get: three numbers about the location.</h2>
+      <p class="lead">Tupll compares the neighborhood around your address with the locations of existing independent coffee shops. On every number, 100 means typical and higher is better.</p>
+    </div>
+    <div class="scores">
+      <div class="card score lead-score">
+        <p class="lbl">The headline number</p>
+        <h3 class="h3">Location Index</h3>
+        <p class="big">108</p>
+        <div class="scale" aria-hidden="true"><span class="rng" style="left: 51%; width: 18%;"></span><span class="typ"></span><span class="mark" style="left: 60%;"></span></div>
+        <div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
+        <p class="small">How promising this spot looks next to the locations of existing independent coffee shops. 130 means about 30 percent more promising than typical. 80 means about 20 percent less.</p>
       </div>
-    </a>
+      <div class="card score">
+        <p class="lbl">Underneath it</p>
+        <h3 class="h3">Customer Draw</h3>
+        <p class="big">120</p>
+        <div class="scale" aria-hidden="true"><span class="rng" style="left: 65%; width: 20%;"></span><span class="typ"></span><span class="mark" style="left: 75%;"></span></div>
+        <div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
+        <p class="small">How many customers a shop in a place like this tends to pull in. It looks at who lives, works, and drives nearby: households, incomes, daytime workers, traffic on the surrounding roads, and the businesses around it.</p>
+      </div>
+      <div class="card score">
+        <p class="lbl">Underneath it</p>
+        <h3 class="h3">Staying Power</h3>
+        <p class="big">90</p>
+        <div class="scale" aria-hidden="true"><span class="rng" style="left: 28%; width: 19%;"></span><span class="typ"></span><span class="mark" style="left: 37.5%;"></span></div>
+        <div class="scale-labels" aria-hidden="true"><span>60</span><span>100 typical</span><span>140</span></div>
+        <p class="small">How often coffee shops that opened in places like this were still open three years later. It comes from years of public business records, including the shops that closed.</p>
+      </div>
+    </div>
+    <p class="help">Example figures. Each number comes with a likely range, shown as the shaded band.</p>
+    <div class="callout narrow"><p>The Location Index combines the other two, because a good spot needs both. A corner with big crowds where shops keep closing is not a great corner. Neither is a quiet corner where shops last forever.</p></div>
   </div>
 
-  <div class="wrap" style="padding-top: 28px;"><p class="small" style="max-width: 760px;">Tupll is a site-selection analytics firm that works with multi-location operators. Site Check applies the same public-data method to a single address. <a href="https://tupll.com">About Tupll</a></p></div>
+  <div class="wrap section stack" style="gap: 20px;">
+    <h2 class="h2">How to use the numbers.</h2>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><div><p style="font-weight: 600;">Compare your options by Location Index.</p><p class="help">Choosing between several addresses? The higher index is the stronger location.</p></div></div>
+      <div class="step"><div class="n">2</div><div><p style="font-weight: 600;">When two are close, look underneath.</p><p class="help">If the likely ranges overlap, treat the locations as tied and let your situation decide. Tight on savings and need to last through a slow start? Favor Staying Power. Well funded and chasing volume? Favor Customer Draw.</p></div></div>
+      <div class="step"><div class="n">3</div><div><p style="font-weight: 600;">Watch for the warning flag.</p><p class="help">If Customer Draw or Staying Power is unusually low, Tupll flags it, even when the headline number looks fine.</p></div></div>
+    </div>
+    <div class="scroll"><table>
+      <caption>An example with three addresses</caption>
+      <thead><tr><th>Address</th><th class="n">Customer Draw</th><th class="n">Staying Power</th><th class="n">Location Index</th></tr></thead>
+      <tbody>
+        <tr><td>Corner A</td><td class="n">120</td><td class="n">90</td><td class="n win">108</td></tr>
+        <tr><td>Corner B</td><td class="n">140</td><td class="n"><span class="flag">70</span></td><td class="n">98</td></tr>
+        <tr><td>Corner C</td><td class="n">95</td><td class="n">115</td><td class="n win">109</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small narrow">Corner B has the biggest crowds and still ranks last, because shops in places like it tend not to last. A and C are effectively tied, and the owner's situation decides between them.</p>
+  </div>
+
+  <div class="wrap section stack" style="gap: 14px;">
+    <h2 class="h2">Tupll compares locations, not businesses.</h2>
+    <p class="lead narrow">It answers one question: if the same owner opened the same shop in each of these places, which place gives better odds?</p>
+    <p class="narrow">It cannot see the things that are up to you or specific to the site. A great operator in an average location can outperform a weak operator in a great one. Use the numbers to choose between locations and to spot problems early, alongside your own judgment and a visit to the site.</p>
+    <p class="lbl" style="padding-top: 4px;">Not measured</p>
+    <ul class="not-measured"><li>The quality of your product</li><li>Your staff and service</li><li>Your prices and hours</li><li>The condition of the building</li><li>Your rent</li><li>Parking</li><li>Signage</li><li>How easy it is to pull in and out of the lot</li></ul>
+  </div>
 
   <div class="wrap section stack" style="gap: 20px;">
-    <h2 class="h2">From an address to a clearer decision.</h2>
-    <div class="steps">
-      <div class="step"><div class="n">1</div><div><p style="font-weight: 600;">Enter your address.</p><p class="help">The Texas location you are considering.</p></div></div>
-      <div class="step"><div class="n">2</div><div><p style="font-weight: 600;">Choose a report.</p><p class="help">You see the address, delivery date, and price before you pay.</p></div></div>
-      <div class="step"><div class="n">3</div><div><p style="font-weight: 600;">Receive it as a web page.</p><p class="help">Tupll prepares it for your address within three business days.</p></div></div>
+    <div class="stack narrow" style="gap: 10px;">
+      <h2 class="h2">The report shows the neighborhood behind the numbers.</h2>
+      <p>Built from public records, census, and mapping data, and prepared by Tupll for your address.</p>
+    </div>
+    <div class="cols-2w stack" style="gap: 16px;">
+      <a class="card preview" href="sample.html" style="text-decoration: none; color: inherit; display: block;" aria-label="See the sample report">
+        <div class="mapbox short" id="map-hero" role="img" aria-label="Map of coffee shops within 2 miles of the sample address"></div>
+        <div class="body">
+          <p class="lbl">From the sample report · South Austin</p>
+          <ul class="facts">
+            <li class="c2"><strong>16 coffee shops</strong> listed within 1 mile; the nearest is 0.2 miles away</li>
+            <li><strong>62% of households rent</strong>, against 42% across the wider area</li>
+            <li class="c3"><strong>4,000 jobs</strong> within half a mile</li>
+          </ul>
+          <span style="font-weight: 600; text-decoration: underline; text-underline-offset: 3px;">See a sample report</span>
+        </div>
+      </a>
+      <div class="card stack" style="gap: 12px; padding: 20px;">
+        <p class="lbl">In every report</p>
+        <ul class="inc" style="font-size: 15px; line-height: 23px; gap: 8px;">
+          <li>Location Index, Customer Draw, and Staying Power, each with its likely range and any warning flag</li>
+          <li>The area customers can reach by car, with 1, 2, and 3 mile rings</li>
+          <li>Who lives nearby: households, renters and owners, education, income</li>
+          <li>Who works nearby by day</li>
+          <li>How the area is changing: home purchases, building permits, population</li>
+          <li>The coffee shops already there, by name, distance, and chain or independent</li>
+          <li>Neighborhoods to reach first when you open</li>
+          <li>What the data cannot tell you, and a checklist for your site visit</li>
+        </ul>
+      </div>
     </div>
   </div>
 
   <div class="wrap section stack" style="gap: 20px;" id="options">
     <h2 class="h2" id="options-heading" tabindex="-1">Report options.</h2>
-    <div class="confirm hidden" id="confirm"><span>Report for <strong id="confirm-addr"></strong></span><button class="linkbtn" type="button" onclick="editAddress()">Change address</button></div>
+    <div class="confirm hidden" id="confirm"><span><span id="confirm-type">Coffee shop</span> at <strong id="confirm-addr"></strong></span><button class="linkbtn" type="button" onclick="editAddress()">Change</button></div>
     <div class="cols-2w stack" style="gap: 16px;">
       <div class="card primary stack" style="gap: 12px; padding: 20px;">
         <p class="lbl">Site report</p><p class="price">$149</p>
-        <p>One address. A web report delivered within three business days, with a target of two.</p>
-        <ul class="inc"><li>Trade area by drive time, with 1, 2, and 3 mile rings</li><li>Who lives here</li><li>Who works here by day</li><li>How the area is changing</li><li>The coffee market nearby, shop by shop</li><li>Site index with four sub-scores</li><li>Five neighborhoods that fit a coffee-shop profile</li><li>Data limits and a site-visit checklist</li></ul>
+        <p>One address, one business type. The three numbers and the full neighborhood report, delivered as a web page within three business days, with a target of two.</p>
         <div style="margin-top: auto;" class="stack"><a class="btn btn-primary block order" data-tier="149" href="checkout.html?tier=149">Order the $149 report</a></div>
       </div>
       <div class="card stack" style="gap: 12px; padding: 20px;">
         <p class="lbl">Site report, aerial, and call</p><p class="price">$299</p>
-        <p>Everything in the $149 report, plus an aerial image of the site and a 15-minute call.</p>
-        <ul class="inc"><li>USGS aerial image, to check entry points, parking, and neighboring buildings before your visit</li><li>A 15-minute call to walk through the findings and your visit checklist</li></ul>
+        <p>Everything in the $149 report, plus:</p>
+        <ul class="inc"><li>An aerial image of the site, to check entry points, parking, and neighboring buildings before your visit</li><li>A 15-minute call to walk through the findings and your visit checklist</li></ul>
         <div style="margin-top: auto;" class="stack"><a class="btn btn-outline block order" data-tier="299" href="checkout.html?tier=299">Choose the $299 report</a></div>
       </div>
     </div>
     <p class="help">No account required. Tupll prepares each report after the order is placed. Review the <a href="terms.html">terms</a> and <a href="terms.html#refunds">refund policy</a> before paying.</p>
-    <p class="small"><strong>Not ready to order?</strong> <a href="sample.html">Read the complete sample</a>, free and without an account, or <button class="linkbtn" type="button" onclick="openIntake()">ask Tupll a question first</button>.</p>
+    <p class="small"><strong>Not ready to order?</strong> <a href="sample.html">See a sample report</a>, free and without an account, or <button class="linkbtn" type="button" onclick="openIntake()">ask Tupll a question first</button>.</p>
   </div>
 
   <div class="wrap section cols-side hidden" id="intake">
@@ -77,7 +151,7 @@
       <p>Tupll reads every question and replies by email when we can help with your decision. This is not an order.</p>
     </div>
     <form class="card stack" style="gap: 18px; padding: 20px;" id="intake-form" onsubmit="return sendIntake(event)">
-      <div><label class="fl" for="i-addr">Candidate address</label><input class="input" id="i-addr" name="address" required placeholder="Street address, city, Texas ZIP"></div>
+      <div><label class="fl" for="i-addr">Address you are considering</label><input class="input" id="i-addr" name="address" required placeholder="Street address, city, Texas ZIP"></div>
       <div class="stack" style="gap: 8px;">
         <label class="fl" for="i-q" style="margin: 0;">The one question you most want answered</label>
         <div style="display: flex; flex-wrap: wrap; gap: 8px;">
@@ -97,22 +171,24 @@
     <div class="card stack hidden" style="gap: 12px; padding: 20px;" id="intake-sent">
       <h3 class="h3">Thanks. Your question is with Tupll.</h3>
       <p>No order has been placed. Tupll replies by email when we can help with your decision.</p>
-      <a href="sample.html" style="font-weight: 600;">Read the complete sample</a>
+      <a href="sample.html" style="font-weight: 600;">See a sample report</a>
     </div>
   </div>
 
   <div class="wrap section stack narrow" style="gap: 0; margin-inline: auto;">
     <h2 class="h2" style="padding-bottom: 16px;">Questions.</h2>
-    <details><summary>Who is this for?</summary><p class="body small">An independent owner considering one Texas address for a coffee shop, including a first-time owner deciding whether to sign a lease.</p></details>
-    <details open><summary>What will I receive, and when?</summary><p class="body small">A web report covering the trade area, residents, daytime workers, local change, coffee competition, an area-conditions index, and five neighborhoods that fit a coffee-shop profile. It arrives within three business days of payment, with a target of two. Your delivery date appears before payment and is repeated in a confirmation email.</p></details>
-    <details><summary>Can it tell me whether the shop will succeed?</summary><p class="body small">No. The index summarizes public-data conditions, not sales or business success. Rent, operating costs, visibility, parking, and the experience at the storefront still need your judgment, and a site visit.</p></details>
+    <details><summary>Who is this for?</summary><p class="body small">An independent owner considering one or more Texas addresses for a coffee shop, including a first-time owner deciding whether to sign a lease. More business types will follow.</p></details>
+    <details open><summary>What will I receive, and when?</summary><p class="body small">A web report for your address with the Location Index, Customer Draw, and Staying Power, and the neighborhood detail behind them. It arrives within three business days of payment, with a target of two. Your delivery date appears before payment and is repeated in a confirmation email.</p></details>
+    <details><summary>Can it tell me whether my shop will succeed?</summary><p class="body small">No. Tupll compares locations, not businesses. The numbers are relative: they show how this location compares with the locations of existing independent coffee shops. They say nothing about sales, and they cannot see your product, staff, rent, building, parking, or how easy it is to pull into the lot.</p></details>
+    <details><summary>What does 100 mean?</summary><p class="body small">Typical for the locations of existing independent coffee shops. It is not a percentage and not a grade. 130 means the location looks about 30 percent more promising than typical; 80 means about 20 percent less.</p></details>
+    <details><summary>I am comparing several addresses. How does that work?</summary><p class="body small">Order a report for each address. With several saved locations you see them side by side in one table and sort by what matters most to you: the balanced Location Index, higher customer counts, or longevity.</p></details>
     <details><summary>What is the refund policy?</summary><p class="body small">Read the <a href="terms.html#refunds">refund policy</a> before paying. You will also review a summary and accept the terms at checkout.</p></details>
   </div>
 
-  <div class="wrap section"><div class="mocknote"><strong>Mockup note, not part of the page.</strong> This is the Stage 1a flow: address, report options, checkout. The Stage 1b design, where the address box returns a free instant result, is previewed at <a href="stage1b.html">stage1b.html</a> and <a href="lookup.html">lookup.html</a>.</div></div>
+  <div class="wrap section"><div class="mocknote"><strong>Mockup note, not part of the page.</strong> This is the Stage 1a flow: address, report options, checkout. The Stage 1b design, where the address box returns a free instant result, is previewed at <a href="stage1b.html">stage1b.html</a> and <a href="lookup.html">lookup.html</a>. The hero aerial is a real public-domain USGS photograph and is a placeholder for a chosen photo.</div></div>
 </main>
 
-<footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check for coffee shops.</p><div class="links"><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
+<footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check.</p><div class="links"><a class="help" href="https://tupll.com">About Tupll</a><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="data/sample.js"></script>
@@ -123,13 +199,15 @@ function isTexas(v) { return /\b(tx|texas)\b/i.test(v) || /\b7[5-9]\d{3}\b/.test
 function confirmAddress(e) {
   e.preventDefault();
   var v = document.getElementById('addr').value.trim(), err = document.getElementById('addr-error');
+  var sel = document.getElementById('btype'), type = sel.value, typeLabel = sel.options[sel.selectedIndex].text;
   if (!v) { document.getElementById('addr').focus(); return false; }
   if (!isTexas(v)) { err.classList.remove('hidden'); return false; }
   err.classList.add('hidden');
   document.getElementById('confirm-addr').textContent = v;
+  document.getElementById('confirm-type').textContent = typeLabel;
   document.getElementById('confirm').classList.remove('hidden');
   document.getElementById('i-addr').value = v;
-  document.querySelectorAll('a.order').forEach(function (a) { a.href = 'checkout.html?tier=' + a.dataset.tier + '&address=' + encodeURIComponent(v); });
+  document.querySelectorAll('a.order').forEach(function (a) { a.href = 'checkout.html?tier=' + a.dataset.tier + '&type=' + encodeURIComponent(type) + '&address=' + encodeURIComponent(v); });
   var h = document.getElementById('options-heading'); h.scrollIntoView({ behavior: 'smooth', block: 'start' }); h.focus({ preventScroll: true });
   return false;
 }

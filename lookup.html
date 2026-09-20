@@ -10,14 +10,15 @@
 <link rel="stylesheet" href="site.css">
 </head>
 <body>
-<header class="site"><div class="wrap"><a href="stage1b.html"><img src="tupll-logo.png" alt="Tupll"></a><a class="util" href="sample.html">View a sample report</a></div></header>
+<header class="site"><div class="wrap"><a href="stage1b.html"><img src="tupll-logo.png" alt="Tupll"></a><a class="util" href="sample.html">See a sample report</a></div></header>
 
 <main class="wrap" style="padding-bottom: 40px;">
   <div class="mocknote" style="margin-top: 16px;"><strong>Mockup note, not part of the page.</strong> Stage 1b design preview. The lookup always shows the sample address here; every figure on this page is real public data for that address.</div>
 
   <form class="searchbar" style="padding-top: 20px;" onsubmit="return false;">
+    <select class="select input" aria-label="Business type" style="background-color: var(--card); max-width: 190px;"><option selected>Coffee shop</option></select>
     <input class="input" aria-label="Texas street address" value="2110 S Lamar Blvd, Austin, TX 78704" style="background: var(--card);">
-    <button class="btn btn-outline" type="submit">Show nearby coffee shops</button>
+    <button class="btn btn-outline" type="submit">Show what is nearby</button>
   </form>
 
   <div class="stack" style="gap: 6px; padding-top: 28px;">
@@ -39,27 +40,28 @@
         <tr><td>Jobs</td><td class="n">11,600</td><td class="n">108,300</td><td class="n">267,400</td></tr>
       </tbody>
     </table></div>
-    <p class="src">Coffee shops: Overture Places, release 2026-08-19. Residents: 2020 Census. Households: ACS 2019 to 2023. Jobs: LODES 2023. Listings can be incomplete or out of date. A dash means no data; a zero means none listed.</p>
+    <p class="src">From public records, census, and mapping data. Business listings as of August 2026, residents from the 2020 Census, households and jobs from 2023 federal data. Listings can be incomplete or out of date. A dash means no data; a zero means none listed.</p>
     <p class="help">This was your free lookup. Add an email for two more. <a href="#">Add email</a></p>
   </div>
 
   <div class="section cols-2 stack" style="gap: 24px;">
     <div class="stack" style="gap: 12px;">
-      <h2 class="h2">Counts are the start. The report is the second opinion.</h2>
-      <p>The lookup counts what is near the address. The report compares it, maps how far customers can drive, shows where the area is heading, and tells you what to check before you sign.</p>
+      <h2 class="h2">Counts are the start. The report scores the location.</h2>
+      <p>The lookup counts what is near the address. The report turns the neighborhood into three numbers, the Location Index, Customer Draw, and Staying Power, each compared with the locations of existing independent coffee shops, and tells you what to check before you sign.</p>
+      <p class="small">Tupll compares locations, not businesses. It cannot see your product, staff, rent, building, or parking.</p>
       <p class="small">Tupll prepares each report for the address after the order is placed. It is delivered as a web page within three business days.</p>
       <a href="sample.html" style="font-weight: 600;">View a sample report</a>
     </div>
     <div class="card primary stack" style="gap: 12px; padding: 20px;">
       <p class="lbl">Site report for 2110 S Lamar Blvd</p><p class="price">$149</p>
-      <ul class="inc"><li>Trade area by drive time, not just circles</li><li>Residents and workers compared with the wider area</li><li>How the area is changing</li><li>Every nearby coffee shop by name, distance, and chain status</li><li>Site index with four sub-scores</li><li>Five neighborhoods that fit a coffee-shop profile</li><li>Data limits and a site-visit checklist</li></ul>
+      <ul class="inc"><li>Location Index, Customer Draw, and Staying Power, with likely ranges and warning flags</li><li>The area customers can reach by car, not just circles</li><li>Residents and workers compared with the wider area</li><li>How the area is changing</li><li>Every nearby coffee shop by name, distance, and chain or independent</li><li>Neighborhoods to reach first when you open</li><li>Data limits and a site-visit checklist</li></ul>
       <a class="btn btn-primary block" href="checkout.html?tier=149&address=2110%20S%20Lamar%20Blvd%2C%20Austin%2C%20TX%2078704">Order the $149 report for this address</a>
       <p class="help">Or <a href="checkout.html?tier=299&address=2110%20S%20Lamar%20Blvd%2C%20Austin%2C%20TX%2078704">$299 with an aerial image and a 15-minute call</a>. No account required.</p>
     </div>
   </div>
 </main>
 
-<footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check for coffee shops.</p><div class="links"><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
+<footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check.</p><div class="links"><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
 
 <script src="https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
 <script src="data/sample.js"></script>
