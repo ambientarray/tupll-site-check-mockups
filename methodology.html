@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>How the Location Index is built | Tupll Site Check</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Geist:wght@400;600&family=Geist+Mono&display=swap">
+<link rel="stylesheet" href="site.css">
+</head>
+<body>
+<header class="site"><div class="wrap"><a href="index.html"><img src="tupll-logo.png" alt="Tupll"></a><a class="util" href="sample.html">See a sample report</a></div></header>
+
+<main class="wrap narrow section stack" style="gap: 28px; padding-top: 32px; padding-bottom: 40px; margin-inline: auto;">
+  <div class="stack" style="gap: 10px;">
+    <p class="lbl">Tupll Site Check</p>
+    <h1 class="h1">How the Location Index is built.</h1>
+    <p class="lead">What goes in, how we tested it, what it scored on ground it had never seen, and where it stops being useful.</p>
+  </div>
+
+  <section class="stack" style="gap: 10px;">
+    <h2 class="h2">What we did.</h2>
+    <p>We started with every coffee shop in Texas we could identify: about 8,500 locations, of which 5,800 are independents rather than chain outlets. For each one we measured the neighborhood around it at four distances, from a half mile out to ten miles, using public data: the census, federal employment records, state business permits, road and land data, and an open map of businesses.</p>
+    <p>Then we asked a simple question. Given only what is true about the area around a coffee shop, and knowing nothing about the shop itself, how well can we predict how much custom it attracts?</p>
+    <p>The answer is: quite well, and we can show our working.</p>
+  </section>
+
+  <section class="stack" style="gap: 10px;">
+    <h2 class="h2">How we know it works.</h2>
+    <p>The easy mistake in this kind of work is to build a model that looks brilliant on the data it learned from and falls apart anywhere new. We took three steps to avoid it.</p>
+    <p><strong>We held back whole regions of Texas.</strong> The model was trained on some parts of the state and then tested on regions it had never seen. Not a random sample of shops, which would let it peek at the answer through neighboring locations, but entire areas removed from its view.</p>
+    <p><strong>We threw away the near misses.</strong> When testing on a region, we also discarded every training location within ten miles of it, so the model could not simply remember what the shop down the road was doing.</p>
+    <p><strong>We kept one final set sealed.</strong> A portion of the data was locked away at the start and opened exactly once, at the end, after every decision had been made and could no longer be changed. The score on that sealed set was 0.393. The score we had predicted beforehand was 0.403. The model performed on genuinely unseen ground almost exactly as we said it would.</p>
+  </section>
+
+  <section class="stack" style="gap: 10px;">
+    <h2 class="h2">What the result actually means.</h2>
+    <p>Rank every location in a region and take the ones the model puts in its top ten percent. On ground the model had never seen, about <strong>1.9 times</strong> as many of those turn out to be genuinely top-tier locations as you would get by picking at random. Comparing sites within a single region, which is the more realistic choice most owners face, it is about <strong>2 times</strong>.</p>
+    <p>That is a statement about how often the model is right, not about how many customers a shop will get. It does not promise any location 1.9 times the trade of another.</p>
+    <p>The avoidance side is more striking. Pick a location blind and roughly <strong>one in five</strong> is bottom-tier. Among the locations the model ranks highest, it is about <strong>one in fourteen</strong>. Among the ones it ranks lowest, it is closer to <strong>one in two</strong>.</p>
+    <p>The avoidance is the more valuable half. The model is better at telling you which corners to walk away from than at promising which one will make you rich.</p>
+  </section>
+
+  <section class="stack" style="gap: 10px;">
+    <h2 class="h2">What we measure, and what we do not.</h2>
+    <p>The score is built from the characteristics of an area: how many people live there and who they are, how many work nearby, what else is open around the corner, how the streets and buildings are arranged, and what the local coffee market already looks like.</p>
+    <p>It does not measure your business. It cannot see your coffee, your staff, your prices, your hours, your rent, the state of the building, the parking, or how easy it is to turn into the lot. Any one of those can matter more than the neighborhood. A good operator in an average location regularly beats a poor operator in a great one.</p>
+    <p>So the score is a way to compare locations with each other, and to spot the ones worth avoiding. It is not a forecast for your business.</p>
+  </section>
+
+  <section class="stack" style="gap: 10px;">
+    <h2 class="h2">Honest limits.</h2>
+    <p><strong>It measures customer traction, not money.</strong> The model learns from a measure of how much customer traction each existing shop attracts, which correlates with the factors behind a strong location. That is not revenue, and we do not claim it is. We are working on adding a direct measure of visits.</p>
+    <p><strong>It is built on Texas.</strong> Every location it learned from is in Texas. It transfers well between Texas regions, which we tested deliberately, and we expect it to travel further, but we have not yet proved that in another state.</p>
+    <p><strong>It describes patterns, not causes.</strong> The model can tell you that locations like this one tend to do well. It cannot tell you that changing something about a neighborhood would change a shop's fortunes.</p>
+    <p><strong>It scores every location with equal confidence.</strong> It does not yet detect when an address is unlike anything it was trained on, so treat a score for an unusual location, a rural crossroads or a site inside a large facility, with more caution than one for an ordinary street corner.</p>
+    <p><strong>It does not predict survival.</strong> We tested whether location alone predicts whether a coffee shop is still trading three years later. It barely does, close to a coin toss, so we do not publish a survival score. Anyone who offers you one from location data should be asked how they tested it.</p>
+  </section>
+
+  <section class="stack" style="gap: 10px;">
+    <h2 class="h2">Why you can check us.</h2>
+    <p>Nearly everything behind the score is public: census data, federal employment statistics, state business permits, and open mapping data. We are not asking you to take a black box on trust. We are telling you what kind of information goes in, how we tested it, what it scored on ground it had never seen, and where it stops being useful.</p>
+    <div><a class="btn btn-primary" href="index.html#options">Order a report for your address</a></div>
+  </section>
+
+  <div class="mocknote"><strong>Mockup note, not part of the page.</strong> This page is drafted and held in the repository. It is not linked from the landing page and carries a noindex tag until it is cleared for publication.</div>
+</main>
+
+<footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check.</p><div class="links"><a class="help" href="https://tupll.com">About Tupll</a><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
+</body>
+</html>

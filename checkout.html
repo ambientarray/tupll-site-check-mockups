@@ -14,20 +14,28 @@
 <main class="wrap narrow section stack" style="gap: 20px; padding-top: 32px; padding-bottom: 32px;">
   <div class="stack" style="gap: 10px;">
     <h1 class="h1">Confirm your site report.</h1>
-    <p>Review the address, delivery date, and terms before continuing to Stripe.</p>
+    <p>Review the addresses, delivery date, and terms before continuing to Stripe.</p>
   </div>
 
   <form class="stack" style="gap: 20px;" id="co" onsubmit="return goStripe(event)">
-    <div class="stack" style="gap: 10px;" role="radiogroup" aria-label="Report tier">
-      <label class="card" style="display: flex; gap: 12px; padding: 14px; cursor: pointer;" id="tier149-card"><input type="radio" name="tier" value="149" checked onchange="pickTier()" style="accent-color: var(--primary); width: 20px; height: 20px; margin: 3px 0 0;"><span><span style="font-weight: 600; display: block;">Site report. $149.</span><span class="help">The complete web report for one coffee-shop address.</span></span></label>
-      <label class="card" style="display: flex; gap: 12px; padding: 14px; cursor: pointer;" id="tier299-card"><input type="radio" name="tier" value="299" onchange="pickTier()" style="accent-color: var(--primary); width: 20px; height: 20px; margin: 3px 0 0;"><span><span style="font-weight: 600; display: block;">Site report, aerial, and call. $299.</span><span class="help">Everything in the $149 report, plus a USGS aerial image of the site and a 15-minute call.</span></span></label>
-    </div>
-
     <div class="card stack" style="gap: 16px; padding: 16px;">
       <div>
+        <label class="fl" for="co-qty">How many addresses?</label>
+        <select class="select" id="co-qty" onchange="pickQty()">
+          <option value="1">1 address</option><option value="2">2 addresses</option><option value="3">3 addresses</option><option value="4">4 addresses</option><option value="5">5 addresses</option>
+          <option value="6">6 addresses</option><option value="7">7 addresses</option><option value="8">8 addresses</option><option value="9">9 addresses</option><option value="10">10 addresses</option>
+        </select>
+        <p class="help" style="margin-top: 6px;">One address is $139. Two to five in the same order are $119 each. Six to ten are $103 each. Every address gets the same report, and you see them side by side in one table.</p>
+      </div>
+      <div>
         <span class="fl">Report address</span>
-        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><p id="co-addr">2110 S Lamar Blvd, Austin, TX 78704</p><a href="index.html" style="font-size: 14px; white-space: nowrap;">Edit address</a></div>
-        <p class="help">Business type: Coffee shop. This is the address Tupll will analyze.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; gap: 12px;"><p id="co-addr">West Riverside Drive corridor, South Austin, TX</p><a href="index.html" style="font-size: 14px; white-space: nowrap;">Edit address</a></div>
+        <p class="help">Business type: Coffee shop. This is the first address Tupll will analyze.</p>
+      </div>
+      <div class="hidden" id="co-more">
+        <label class="fl" for="co-addrs">The other addresses, one per line</label>
+        <textarea class="textarea" id="co-addrs" rows="4" placeholder="Street address, city, Texas ZIP"></textarea>
+        <p class="help" style="margin-top: 6px;">Texas addresses only. You can also send them by email after ordering; the delivery clock starts when the last address arrives.</p>
       </div>
       <div>
         <label class="fl" for="co-email">Delivery email</label>
@@ -44,14 +52,16 @@
     <dl class="stack" style="gap: 0;">
       <div class="dl" style="border-top: 1px solid var(--border);"><dt>Delivery by</dt><dd>Tuesday, October 6, 2026</dd></div>
       <div class="dl"><dt>Prepared by</dt><dd>Tupll</dd></div>
-      <div class="dl"><dt>Format</dt><dd>Web report</dd></div>
-      <div class="dl"><dt>Selected price</dt><dd id="co-price">$149</dd></div>
+      <div class="dl"><dt>Format</dt><dd>Web report, one per address</dd></div>
+      <div class="dl"><dt>Addresses</dt><dd id="co-count">1</dd></div>
+      <div class="dl"><dt>Price per address</dt><dd id="co-each">$139</dd></div>
+      <div class="dl"><dt>Total</dt><dd id="co-price" style="font-weight: 600;">$139</dd></div>
     </dl>
     <p class="help">Delivered within three business days. Your confirmation email will arrive within one minute.</p>
 
     <div class="stack" style="gap: 10px;">
       <h2 class="h3">Before you pay.</h2>
-      <p class="small">You are ordering a fixed-scope report for one address. It describes public-data conditions and does not predict business success.</p>
+      <p class="small">You are ordering fixed-scope reports for the addresses listed. Each report describes public-data conditions and compares locations; it does not predict business success.</p>
       <div style="display: flex; gap: 16px;"><a href="terms.html" style="font-size: 14px;">Terms</a><a href="terms.html#refunds" style="font-size: 14px;">Refund policy</a></div>
       <div class="note">Refund summary pending approval. Checkout is not open. (Prototype: the button below goes to the confirmation page.)</div>
       <label class="check"><input type="checkbox" id="co-terms" required> I agree to the Terms and acknowledge the Refund policy.</label>
@@ -69,25 +79,29 @@
 <footer class="site"><div class="wrap"><div class="rule" style="margin-bottom: 20px;"></div><p class="help">Tupll Site Check for coffee shops.</p><div class="links"><a class="help" href="terms.html">Terms</a><a class="help" href="terms.html#refunds">Refund policy</a><a class="help" href="terms.html#privacy">Privacy</a></div></div></footer>
 
 <script>
-function pickTier() {
-  var t = document.querySelector('input[name=tier]:checked').value;
-  document.getElementById('co-price').textContent = '$' + t;
-  document.getElementById('tier149-card').style.border = t === '149' ? '2px solid var(--primary)' : '1px solid var(--border)';
-  document.getElementById('tier299-card').style.border = t === '299' ? '2px solid var(--primary)' : '1px solid var(--border)';
+function eachPrice(n) { return n >= 6 ? 103 : n >= 2 ? 119 : 139; }
+function qty() { return parseInt(document.getElementById('co-qty').value, 10) || 1; }
+function pickQty() {
+  var n = qty(), each = eachPrice(n);
+  document.getElementById('co-count').textContent = n;
+  document.getElementById('co-each').textContent = '$' + each;
+  document.getElementById('co-price').textContent = '$' + (n * each).toLocaleString('en-US');
+  document.getElementById('co-more').classList.toggle('hidden', n < 2);
 }
 (function () {
   var q = new URLSearchParams(location.search);
   if (q.get('address')) document.getElementById('co-addr').textContent = q.get('address');
-  if (q.get('tier') === '299') document.querySelector('input[name=tier][value="299"]').checked = true;
-  pickTier();
+  var n = parseInt(q.get('qty'), 10);
+  if (n >= 1 && n <= 10) document.getElementById('co-qty').value = String(n);
+  pickQty();
 })();
 function goStripe(e) {
   e.preventDefault();
   var ok = document.getElementById('co-email').checkValidity() && document.getElementById('co-when').value && document.getElementById('co-terms').checked;
   if (!ok) { document.getElementById('co-error').classList.remove('hidden'); document.getElementById('co').reportValidity(); return false; }
   var b = document.getElementById('co-go'); b.textContent = 'Opening secure checkout…'; b.disabled = true;
-  var t = document.querySelector('input[name=tier]:checked').value;
-  setTimeout(function () { location.href = 'thanks.html?tier=' + t + '&email=' + encodeURIComponent(document.getElementById('co-email').value); }, 800);
+  var n = qty(), total = n * eachPrice(n);
+  setTimeout(function () { location.href = 'thanks.html?qty=' + n + '&total=' + total + '&address=' + encodeURIComponent(document.getElementById('co-addr').textContent) + '&email=' + encodeURIComponent(document.getElementById('co-email').value); }, 800);
   return false;
 }
 </script>

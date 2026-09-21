@@ -243,6 +243,25 @@ td.win { font-weight: 600; color: var(--drive); }
   .compose .lead-score .big { font-size: 56px; line-height: 60px; }
 }
 
+/* Revision 8: one score, on a 50 to 200 axis. */
+.solo { display: grid; gap: 16px; }
+.solo .lead-score { padding: 24px; }
+.solo .lead-score .big { font-size: 64px; line-height: 68px; }
+.scale.s200 .typ { left: 33.33%; }
+table th.rd, table td.rd { padding-left: 20px; }
+.stat-groups .scroll { max-width: 100%; }
+.stat-groups { display: grid; gap: 18px; grid-template-columns: minmax(0, 1fr); }
+.stat-groups > * { min-width: 0; }
+.stat-groups .scroll { overflow-x: visible; }
+.stat-groups table { width: 100%; table-layout: fixed; font-size: 14px; }
+.stat-groups th:first-child, .stat-groups td:first-child { width: 44%; }
+.stat-groups th.n, .stat-groups td.n { width: 28%; }
+.stat-groups th.rd, .stat-groups td.rd { width: 28%; padding-left: 12px; }
+.stat-groups table td.rank { white-space: normal; }
+.stat-groups table td.rank { color: var(--drive); font-weight: 600; white-space: nowrap; }
+.price-tiers td, .price-tiers th { padding-top: 6px; padding-bottom: 6px; }
+@media (min-width: 900px) { .solo { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: start; } .stat-groups { grid-template-columns: 1fr 1fr; } }
+
 /* Revision 7: price and scope line inside the white hero panel. */
 .panel-note { grid-column: 1 / -1; font-size: 13px; line-height: 19px; color: var(--muted); margin: 0; }
 .hero-photo .panel-note a { color: var(--primary); }
