@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#f7f4ed">
+  <title>Tupll Light — Your next coffee shop starts here</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;450;500;550;600;650;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="coffee-corner.css">
+</head>
+<body>
+  <header class="masthead">
+    <a class="brand" href="coffee-corner.html" aria-label="Tupll Light home"><img src="tupll-logo.png" alt="Tupll"><span>light</span></a>
+    <nav aria-label="Main navigation"><a class="how-link" href="#how-it-works">How it works</a><a href="sample.html">View a sample <span aria-hidden="true">↗</span></a></nav>
+  </header>
+  <main>
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-image" aria-hidden="true"></div>
+      <div class="hero-shade" aria-hidden="true"></div>
+      <div class="hero-content">
+        <p class="eyebrow"><span class="little-line"></span> A little clarity. A big beginning.</p>
+        <h1 id="hero-title">Your next<br>coffee shop<br><span>starts here.</span></h1>
+        <p class="intro">You have a place in mind.<br> Get to know the neighborhood before you call it home.</p>
+        <form id="location-form">
+          <label for="address">Where are you thinking of opening?</label>
+          <div class="address-bar">
+            <svg class="pin" width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="10" r="2.5" stroke="currentColor" stroke-width="1.5"/></svg>
+            <input id="address" name="address" type="text" placeholder="Enter a Texas street address" autocomplete="street-address" required maxlength="250" aria-describedby="address-help">
+            <button class="search-button" type="submit"><span>Explore this location</span><svg width="21" height="21" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+          </div>
+          <p id="address-help" class="input-note">For your future coffee shop <span aria-hidden="true">·</span> Texas locations</p>
+        </form>
+      </div>
+      <div class="hero-bottom"><span>Good coffee deserves a good corner.</span><a href="#how-it-works" aria-label="Learn how Tupll works">A closer look <span aria-hidden="true">↓</span></a></div>
+    </section>
+    <section class="details" id="how-it-works" aria-labelledby="details-title">
+      <div class="details-intro"><p class="section-label">A feel for the place.<br> A little more perspective.</p><h2 id="details-title">See beyond<br> the storefront.</h2></div>
+      <div class="detail-item"><span class="number">01 /</span><h3>The coffee scene</h3><p>Discover the coffee shops around the address you’re considering.</p></div>
+      <div class="detail-item"><span class="number">02 /</span><h3>The neighborhood</h3><p>Get a picture of the people who live and work nearby.</p></div>
+      <div class="detail-item"><span class="number">03 /</span><h3>Your next move</h3><p>Take a closer look before you commit to a location.</p></div>
+    </section>
+  </main>
+  <footer><span>Tupll. A better sense of place.</span><div><a href="terms.html#privacy">Privacy</a><a href="terms.html">Terms</a><span class="preview-label">Design preview</span></div></footer>
+  <dialog id="location-preview" aria-labelledby="preview-title" aria-describedby="preview-description">
+    <button class="close-dialog" type="button" aria-label="Close preview">×</button>
+    <p class="section-label">Your future coffee shop</p><h2 id="preview-title">Let’s get to know<br>this corner.</h2>
+    <p id="selected-address"></p><p id="preview-description">This is a design preview. Live address lookup isn’t connected yet. You can explore the existing South Austin sample to see what comes next.</p>
+    <a class="dialog-primary" href="lookup.html">Explore the sample neighborhood <span aria-hidden="true">↗</span></a>
+    <button class="edit-address" type="button">Edit my address</button>
+  </dialog>
+  <script>
+    const form = document.getElementById('location-form');
+    const address = document.getElementById('address');
+    const dialog = document.getElementById('location-preview');
+    form.addEventListener('submit', event => {
+      event.preventDefault();
+      if (!address.value.trim()) { address.setCustomValidity('Enter the address you are considering.'); address.reportValidity(); return; }
+      document.getElementById('selected-address').textContent = address.value.trim();
+      dialog.showModal();
+    });
+    address.addEventListener('input', () => address.setCustomValidity(''));
+    document.querySelector('.close-dialog').addEventListener('click', () => dialog.close());
+    document.querySelector('.edit-address').addEventListener('click', () => { dialog.close(); address.focus(); });
+    dialog.addEventListener('click', event => { if (event.target === dialog) { const r = dialog.getBoundingClientRect(); if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close(); } });
+  </script>
+</body>
+</html>
